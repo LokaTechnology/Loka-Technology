@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* Light theme base */
-:root { --bg: #ffffff; --fg: #111111; --muted: #525252; --line: #e6e6e6; }
+:root { --bg: #e5e4e4; --fg: #2f4f4f; --muted: #525252; --line: #e6e6e6; }
 html, body { height: 100%; margin: 0; }
 body { background: var(--bg); color: var(--fg); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
 
@@ -12,7 +12,7 @@ body { background: var(--bg); color: var(--fg); font-family: system-ui, -apple-s
 
 /* Buttons */
 .btn { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:12px; font-weight:600; border:1px solid transparent; text-decoration:none; }
-.btn-primary { background:#6b6b6b; color:#fff; }
+.btn-primary { background:#2f4f4f; color:#fff; }
 .btn-primary:hover { opacity:.9; }
 .btn-outline { border-color:#111; color:#111; background:#fff; }
 .btn-outline:hover { background:#f7f7f7; }

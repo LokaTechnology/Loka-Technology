@@ -4,18 +4,25 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import lockerImg from "src/images /smart-locker-system-electronic-storage-locker.jpg";
-import { Http2ServerRequest } from "http2";
+import lockerImg from "app/publicImage/images /rs=w_2560,h_1920.webp";
+import lockerimg1 from "app/publicImage/images /smart-locker-system-electronic-storage-locker.jpg"
+import lockerImg2 from "app/publicImage/images /1447744452.webp"
+import Carousel from "./components/Carousel";
+const slides = [
+  { src: lockerImg, alt: "Locker wall — library atrium" },
+  { src: lockerimg1, alt: "Student tapping phone to open" },
+  { src: lockerImg2, alt: "ADA-height bay near entrance" },
+
+];
 
 export default function Home() {
   return (
     <div className="space-y-10" style={{marginTop:"8px"}}>
-      {/* HERO (image left, copy right) */}
       <section style={{
     display: "grid",
     gridTemplateColumns: "1.05fr .95fr",
     gap: 24,
-    alignItems: "start",     // top-align both columns
+    alignItems: "start",
     marginTop: 8
   }}>
   <div className="card" style={{ padding: 0, overflow: "hidden" }}>
@@ -78,8 +85,7 @@ export default function Home() {
       </p>
     </div>
    {/* RIGHT: Image fills the column */}
-<figure
-  style={{position: "relative",
+<figure style={{position: "relative",
     width: "100%",
     aspectRatio: "4 / 3",
     border: "1px solid #d6d6d6",
@@ -87,7 +93,7 @@ export default function Home() {
     overflow: "hidden",
   }}>
   <Image
-    src={lockerImg}          
+    src={lockerimg1}          
     alt="Loka smart lockers on campus"
     fill                    
     priority
@@ -102,8 +108,9 @@ export default function Home() {
       <section style={{maxWidth: "1140px", margin: "0 auto", padding: "40px 16px"}} >
         <h2>Take a Virtual Tour of Loka Technology Smart Storage Lockers's 
           Top-Notch Self Storage Facility</h2>
-          
-        
+          <div style={{ marginTop: 12 }}>
+          <Carousel slides={slides} aspect="16 / 9" autoMs={5000} />
+      </div>
       </section>
     </div>
   );
