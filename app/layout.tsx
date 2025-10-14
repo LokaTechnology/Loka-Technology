@@ -14,9 +14,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <header className="site-header">
           <nav className="container" style={{padding:"14px 0", display:"flex", alignItems:"center", justifyContent:"space-between"}}>
-            <Link href="/" className="font-bold" style={{textDecoration:"none", color:"#111"}}>Loka Technology Smart Storage Lockers</Link>
+            <Link href="/" className="font-bold" style={{textDecoration:"none", color:"#2f4f4f"}}>Loka Technology Smart Storage Lockers</Link>
             <div style={{display:"flex", alignItems:"center", gap:"18px"}}>
-              <Link href ="/">Contact Us</Link>
+              <Link href ="/contact">Contact Us</Link>
               <Link href="/solutions">Problem & Solutions</Link>
               <Link href="/payment">Payment & Services</Link>
               <Link href="/partner">Partner With Us</Link>
@@ -28,13 +28,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="site-footer">
           <div className="container" style={{padding:"24px 0", display:"flex", justifyContent:"space-between", alignItems:"center"}}>
             <p>© {new Date().getFullYear()} Loka Technology LLC</p>
-            <div style={{display:"flex", gap:14}}>
-                <a href="https://instagram.com/lokatechnologyllc" target="_blank">Instagram</a>
-                <a href="https://linkedin.com/company/" target="_blank">LinkedIn</a>
-                <a href="https://tiktok.com/@lokatechnologyllc" target="_blank">TikTok</a>
-                <a href="https://youtube.com/@YOUR_HANDLE" target="_blank">YouTube</a>
-                <a href="https://x.com/lokatechnology?s=21" target="_blank">X</a>
-            </div>
+            <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
+            <a href="https://instagram.com/YOUR_HANDLE" aria-label="Instagram"><img src="/images/insta.png" width="20" height="20" alt="" /></a>
+            <a href="https://x.com/YOUR_HANDLE"          aria-label="X"><img src="/icons/x.svg" width="20" height="20" alt="" /></a>
+            <a href="https://youtube.com/@YOUR_HANDLE"   aria-label="YouTube"><img src="/icons/youtube.svg" width="20" height="20" alt="" /></a>
+            <a href="https://linkedin.com/company/YOUR_COMPANY" aria-label="LinkedIn"><img src="/icons/linkedin.svg" width="20" height="20" alt="" /></a>
+          </div>
           </div>
         </footer>
       </body> 

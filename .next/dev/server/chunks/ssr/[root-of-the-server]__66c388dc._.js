@@ -386,7 +386,7 @@ function Home() {
                                 }
                             }, void 0, false, {
                                 fileName: "[project]/app/page.tsx",
-                                lineNumber: 89,
+                                lineNumber: 88,
                                 columnNumber: 3
                             }, this)
                         }, void 0, false, {
@@ -415,12 +415,12 @@ function Home() {
                     children: "Take a Virtual Tour of Loka Technology Smart Storage Lockers's Top-Notch Self Storage Facility"
                 }, void 0, false, {
                     fileName: "[project]/app/page.tsx",
-                    lineNumber: 103,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 102,
+                lineNumber: 101,
                 columnNumber: 7
             }, this)
         ]

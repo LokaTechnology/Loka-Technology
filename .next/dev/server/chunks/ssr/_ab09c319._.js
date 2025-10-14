@@ -46,7 +46,7 @@ function RootLayout({ children }) {
                                 className: "font-bold",
                                 style: {
                                     textDecoration: "none",
-                                    color: "#111"
+                                    color: "#2f4f4f"
                                 },
                                 children: "Loka Technology Smart Storage Lockers"
                             }, void 0, false, {
@@ -62,7 +62,7 @@ function RootLayout({ children }) {
                                 },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/",
+                                        href: "/contact",
                                         children: "Contact Us"
                                     }, void 0, false, {
                                         fileName: "[project]/app/layout.tsx",
@@ -155,53 +155,81 @@ function RootLayout({ children }) {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 style: {
                                     display: "flex",
-                                    gap: 14
+                                    gap: 12,
+                                    marginTop: 8
                                 },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://instagram.com/lokatechnologyllc",
-                                        target: "_blank",
-                                        children: "Instagram"
+                                        href: "https://instagram.com/YOUR_HANDLE",
+                                        "aria-label": "Instagram",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/images/insta.png",
+                                            width: "20",
+                                            height: "20",
+                                            alt: ""
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/layout.tsx",
+                                            lineNumber: 32,
+                                            columnNumber: 80
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/layout.tsx",
                                         lineNumber: 32,
-                                        columnNumber: 17
+                                        columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://linkedin.com/company/",
-                                        target: "_blank",
-                                        children: "LinkedIn"
+                                        href: "https://x.com/YOUR_HANDLE",
+                                        "aria-label": "X",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/icons/x.svg",
+                                            width: "20",
+                                            height: "20",
+                                            alt: ""
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/layout.tsx",
+                                            lineNumber: 33,
+                                            columnNumber: 73
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/layout.tsx",
                                         lineNumber: 33,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://tiktok.com/@lokatechnologyllc",
-                                        target: "_blank",
-                                        children: "TikTok"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/layout.tsx",
-                                        lineNumber: 34,
-                                        columnNumber: 17
+                                        columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                         href: "https://youtube.com/@YOUR_HANDLE",
-                                        target: "_blank",
-                                        children: "YouTube"
+                                        "aria-label": "YouTube",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/icons/youtube.svg",
+                                            width: "20",
+                                            height: "20",
+                                            alt: ""
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/layout.tsx",
+                                            lineNumber: 34,
+                                            columnNumber: 79
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/layout.tsx",
+                                        lineNumber: 34,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "https://linkedin.com/company/YOUR_COMPANY",
+                                        "aria-label": "LinkedIn",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/icons/linkedin.svg",
+                                            width: "20",
+                                            height: "20",
+                                            alt: ""
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/layout.tsx",
+                                            lineNumber: 35,
+                                            columnNumber: 87
+                                        }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/app/layout.tsx",
                                         lineNumber: 35,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "https://x.com/lokatechnology?s=21",
-                                        target: "_blank",
-                                        children: "X"
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/layout.tsx",
-                                        lineNumber: 36,
-                                        columnNumber: 17
+                                        columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
