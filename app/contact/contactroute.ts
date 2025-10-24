@@ -9,7 +9,6 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "Email and message are required." }, { status: 400 });
     }
 
-    // TODO: send email or store in DB
     console.log("New contact message:", { name, email, message, at: new Date().toISOString() });
 
     return NextResponse.json({ ok: true });
