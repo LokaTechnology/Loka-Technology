@@ -42,3 +42,168 @@ h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: .5px; }
 .phone { font-weight:700; letter-spacing:.6px; }
 .cta-muted { background:#e8e8e8; color:#111; border-radius:10px; padding:12px 18px; text-decoration:none; font-weight:600; }
 .cta-muted:hover { background:#dedede; }
+
+.underlinedText{
+    text-decoration: underline;
+} 
+  
+
+/* Footer separation & lighter background */
+.site-footer {
+    background: #f7f8fa;            /* a bit lighter than pure white */
+    border-top: 1px solid #e5e7eb;  /* subtle divider */
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Optional: if your site uses a dark theme elsewhere */
+  @media (prefers-color-scheme: dark) {
+    .site-footer {
+      background: #f3f4f6;          /* still lighter than dark content */
+      border-top-color: #2a2f35;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
+    }
+  }
+  
+  /* (Optional) container helper if not already defined */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  /* ——— existing Tailwind + your styles remain ——— */
+
+/* Keep desktop layout exactly like you had */
+.header-inner .brand { color: #2f4f4f; }
+
+/* Hide hamburger on desktop, show links */
+.hamburger { display: none; border: 1px solid #e6e6e6; background: #fff; color: #2f4f4f;
+  border-radius: 10px; padding: 8px; line-height: 0; }
+.hamburger:hover { background: #f7f7f7; }
+
+/* Mobile panel base — matches your card/footer colors */
+.mobile-panel {
+  position: fixed;
+  inset: 0 auto auto 0;      /* top-left */
+  top: 56px;                 /* just below header */
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  transform: translateY(-16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .18s ease;
+  z-index: 50;
+}
+.mobile-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.mobile-panel-inner {
+  padding: 14px 16px 18px;
+  display: grid;
+  gap: 16px;
+}
+.mobile-links a {
+  display: block;
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: #2f4f4f;
+  text-decoration: none;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+}
+.mobile-links a:hover { background: #f7f7f7; }
+.mobile-links .btn-primary { width: 100%; margin-top: 6px; }
+
+/* Social row inside mobile */
+.mobile-social { display: flex; gap: 12px; margin-top: 4px; }
+.social-link { color: #6b6b6b; }
+.social-link:hover { color: #2f4f4f; }
+
+/* —— Responsive switches —— */
+@media (max-width: 992px) {
+  .nav-links { display: none !important; }   /* hide desktop links */
+  .hamburger { display: inline-flex; }       /* show hamburger */
+}
+
+@media (min-width: 993px) {
+  .mobile-panel { display: none; }           /* no mobile panel on desktop */
+}
+
+/* Always show hamburger; keep your palette */
+.hamburger {
+  display: inline-flex;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  color: #2f4f4f;
+  border-radius: 10px;
+  padding: 8px;
+  line-height: 0;
+}
+.hamburger:hover { background: #f7f7f7; }
+
+/* Hide any legacy desktop link row if it exists */
+.nav-links { display: none !important; }
+
+/* Backdrop for menu */
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .15s ease;
+  z-index: 49;
+}
+.menu-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Slide-down panel */
+.mobile-panel {
+  position: fixed;
+  left: 0; right: 0; top: 56px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  transform: translateY(-16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .18s ease;
+  z-index: 50;
+}
+.mobile-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-panel-inner { padding: 14px 16px 18px; display: grid; gap: 16px; }
+.mobile-links a {
+  display: block;
+  padding: 12px 10px;
+  border-radius: 10px;
+  color: #2f4f4f;
+  text-decoration: none;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+}
+.mobile-links a:hover { background: #f7f7f7; }
+.mobile-links .btn-primary { width: 100%; margin-top: 6px; }
+
+.mobile-divider { height: 1px; background: var(--line); margin: 4px 0; }
+
+.mobile-auth {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.mobile-social { display: flex; gap: 12px; }
+.social-link { color: #6b6b6b; }
+.social-link:hover { color: #2f4f4f; }

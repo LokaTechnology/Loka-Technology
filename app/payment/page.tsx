@@ -1,7 +1,7 @@
 export default function PaymentServices() {
   return (
     <div className="space-y-8">
-      <h1>Payment & Services</h1>
+      <h1>Pricing</h1>
       <p className="text-white/80">
         Simple pricing. Fast checkout. Secure storage. Book a locker, pay your way, and get a one-time access code in seconds—no keys, no hassle.
       </p>

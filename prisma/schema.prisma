@@ -1,0 +1,41 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"            // swap to "postgresql" later if you want
+  url      = env("DATABASE_URL")
+}
+
+/* Lucia-style models (you can use these with Next 16 + Lucia) */
+model User {
+  id               String   @id @default(cuid())
+  name             String?
+  email            String?  @unique
+  passwordHash     String?
+  stripeCustomerId String?  @unique
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  sessions         Session[]
+  keys             Key[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Key {
+  id             String  @id          // e.g. "email:user@asu.edu"
+  userId         String
+  hashedPassword String?
+  user           User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
