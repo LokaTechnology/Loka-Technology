@@ -16,20 +16,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/book/page.js"
     ],
-    "/api/checkout/route": [
+    "/api/prices/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/checkout/route.js"
+      "static/chunks/app/api/prices/route.js"
     ],
-    "/login/page": [
+    "/payment/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/login/page.js"
+      "static/chunks/app/payment/page.js"
     ],
-    "/register/page": [
+    "/solutions/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/register/page.js"
+      "static/chunks/app/solutions/page.js"
+    ],
+    "/contact/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/contact/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

@@ -2,6 +2,7 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
   "/book/page": "app/book/page.js",
-  "/login/page": "app/login/page.js",
-  "/register/page": "app/register/page.js"
+  "/payment/page": "app/payment/page.js",
+  "/solutions/page": "app/solutions/page.js",
+  "/contact/page": "app/contact/page.js"
 }
