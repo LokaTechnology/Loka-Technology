@@ -1,61 +1,92 @@
-# Node & package managers
+# --- Node / Next.js ---
 node_modules/
+.next/
+.next/cache/
+.out/
+out/
+dist/
+build/
+.turbo/
+.cache/
+.eslintcache
+.vercel/
+
+# Keep only one lockfile (delete the others locally)
+pnpm-lock.yaml
+yarn.lock
+
+# --- Env & secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Logs & reports ---
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# Next.js build output
-.next/
-out/
-.next-static/
-
-# Vercel / deployment
-.vercel/
-.vercel_build_output/
-
-# Environment files (keep only example)
-.env
-.env.*          # .env.local, .env.development, etc.
-!.env.example   # track a template only
-
-# Testing / coverage
-coverage/
-.nyc_output/
-
-# Lint / tooling caches
-.eslintcache
-.stylelintcache
-.turbo/
-.parcel-cache/
-.cache/
-
-# IDE / OS junk
-.DS_Store
-Thumbs.db
-.idea/
-.vscode/*
-!.vscode/extensions.json   # keep team recommendations if you want
-!.vscode/settings.json     # (optional) keep if you want shared settings
-
-# Logs & temp
 *.log
-*.pid
-*.seed
-*.pid.lock
-tmp/
-temp/
+logs/
+coverage/
+*.lcov
 
-# Images / assets (optional examples)
-public/tmp/
-public/uploads/
-public/images/raw/
+# --- Prisma / local DBs ---
+prisma/*.db
+prisma/*.db-journal
+prisma/*.sqlite
+prisma/*.sqlite-journal
+# keep schema & migrations tracked
+!prisma/schema.prisma
+!prisma/migrations/**
+!prisma/migrations/*/**
 
-# TypeScript
+# --- TypeScript build artifacts ---
 *.tsbuildinfo
 
-# Misc
-*.local
+# --- Temp & OS files ---
+*.orig
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# --- IDE / Editor ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.idea/
+*.iml
+
+# --- Optional: Stripe CLI / tooling ---
+.stripe/
+*.secret
+*.key
+
+# --- Optional: Supabase local state ---
+.supabase/
+
+# --- Optional: Storybook/Playwright ---
+.storybook-out/
+playwright-report/
+test-results/
+
+# --- If you keep a Java #odule in this repo ---
+*.class
+target/
+out/
+.g.adle/
+build/
+**/.classpath
+**/.project
+**/.settings/
+**/.idea/
+gradle-app.setting
+# keep Gradle wrapper scripts tracked:
+!gradlew
+!gradlew.bat
+!gradle/wrapper/gradle-wrapper.properties
+!gradle/wrapper/gradle-wrapper.jar
