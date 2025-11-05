@@ -11,6 +11,11 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
+    "/support/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/support/page.js"
+    ],
     "/book/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -21,20 +26,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/prices/route.js"
     ],
-    "/payment/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/payment/page.js"
-    ],
     "/solutions/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/solutions/page.js"
     ],
-    "/contact/page": [
+    "/partner/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
+      "static/chunks/app/partner/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

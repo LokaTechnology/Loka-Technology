@@ -1,9 +1,9 @@
 // app/components/Header.tsx
 "use client";
-
 import Link from "next/link";
 import { useEffect, useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -62,6 +62,7 @@ export default function Header() {
             <Link href="/book" className="btn btn-primary" onClick={close}>Book a Locker</Link>
 
             <div className="mobile-divider" />
+            <ThemeToggle />
 
             {/* Auth ONLY inside the menu */}
             <div className="drawer-auth">
