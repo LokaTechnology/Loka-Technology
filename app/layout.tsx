@@ -1,6 +1,5 @@
 import React from "react";
-
-import Header from "./components/header";
+import Header from "./components/Header";
 import "./globals.css";
 import Link from "next/link";
 import { Instagram, Twitter, Linkedin } from "lucide-react";

@@ -1,4 +1,4 @@
-// File: /Volumes/Alby Drive/Loka-Technology/app/book/page.tsx
+// File: /Users/albertmatara/Downloads/Loka-Technology/app/book/page.tsx
 import * as entry from '../../../../app/book/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

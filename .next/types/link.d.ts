@@ -34,16 +34,16 @@ declare namespace __next_route_internal_types__ {
     | `/api/checkout`
     | `/api/prices`
     | `/api/register`
-    | `/partner`
-    | `/payment`
     | `/api/sessions`
     | `/api/webhook`
-    | `/book`
     | `/contact`
+    | `/book`
     | `/login`
+    | `/partner`
+    | `/payment`
     | `/register`
     | `/solutions`
-    | `/support `
+    | `/support`
   type DynamicRoutes<T extends string = string> = never
 
   type RouteImpl<T> = 

@@ -389,3 +389,39 @@ h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: .5px; }
 
 /* keep list links same, but add subtle section spacing */
 .mobile-divider{ height:1px; background: var(--line); margin: 10px 0 6px; }
+
+/* Base (Light) — you already have this */
+:root {
+  --bg: #e5e4e4;
+  --fg: #2f4f4f;
+  --muted: #525252;
+  --line: #e6e6e6;
+  --brand-slate: #2F4F4F;
+  --brand-green: #1E7D4B;
+  --brand-yellow: #FFC606;
+}
+
+/* Dark */
+:root[data-theme="dark"] {
+  --bg: #0f1616;
+  --fg: #e8efee;
+  --muted: #a6b3b0;
+  --line: #1f2726;
+}
+
+/* High contrast (accessibility) */
+:root[data-theme="contrast"] {
+  --bg: #ffffff;
+  --fg: #0b1f1a;
+  --muted: #1a1a1a;
+  --line: #0b1f1a;
+}
+
+/* Use the variables (you already do this for many places) */
+body { background: var(--bg); color: var(--fg); }
+.site-header, .card, .mobile-panel, .tile { background: #fff; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) { /* fallback: auto-dark if user prefers */
+    color-scheme: dark;
+  }
+}
