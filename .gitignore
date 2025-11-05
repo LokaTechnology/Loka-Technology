@@ -1,61 +1,28 @@
-# Node & package managers
-node_modules/
+# next.js
+.next/
+/out/
+.swc/
+
+# dependencies
+/node_modules
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.*.local
+.env
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
+.pnp
+.pnp.js
 
-# Next.js build output
-.next/
-out/
-.next-static/
-
-# Vercel / deployment
-.vercel/
-.vercel_build_output/
-
-# Environment files (keep only example)
-.env
-.env.*          # .env.local, .env.development, etc.
-!.env.example   # track a template only
-
-# Testing / coverage
-coverage/
-.nyc_output/
-
-# Lint / tooling caches
-.eslintcache
-.stylelintcache
-.turbo/
-.parcel-cache/
-.cache/
-
-# IDE / OS junk
-.DS_Store
-Thumbs.db
+# editor directories and files
+.vscode/
 .idea/
-.vscode/*
-!.vscode/extensions.json   # keep team recommendations if you want
-!.vscode/settings.json     # (optional) keep if you want shared settings
-
-# Logs & temp
-*.log
-*.pid
-*.seed
-*.pid.lock
-tmp/
-temp/
-
-# Images / assets (optional examples)
-public/tmp/
-public/uploads/
-public/images/raw/
-
-# TypeScript
-*.tsbuildinfo
-
-# Misc
-*.local
+*.iml
+*.iws
+*.ipr
