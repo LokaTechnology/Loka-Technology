@@ -30,21 +30,31 @@ declare namespace __next_route_internal_types__ {
 
   type StaticRoutes = 
     | `/`
-    | `/api/auth`
+    | `/api/account/billing-portal`
+    | `/api/account/change-password`
+    | `/api/account/profile`
+    | `/api/account/disconnect/google`
+    | `/api/auth/forgot`
+    | `/api/auth/reset`
     | `/api/checkout`
     | `/api/prices`
     | `/api/register`
     | `/api/sessions`
     | `/api/webhook`
-    | `/contact`
+    | `/account`
+    | `/account/settings`
     | `/book`
+    | `/contact`
+    | `/forgot-password`
     | `/login`
     | `/partner`
     | `/payment`
     | `/register`
     | `/solutions`
     | `/support`
-  type DynamicRoutes<T extends string = string> = never
+    | `/reset-password`
+  type DynamicRoutes<T extends string = string> = 
+    | `/api/auth/${CatchAllSlug<T>}`
 
   type RouteImpl<T> = 
     | StaticRoutes

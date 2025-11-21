@@ -20,10 +20,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container" style={{ padding: "24px 0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
             <p style={{ margin: 0 }}>Copyright © {new Date().getFullYear()} Loka Technology Smart Storage Lockers.</p>
             <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
-              <Link href="https://instagram.com/" aria-label="Instagram" className="social-link"><Instagram size={20} /></Link>
-              <Link href="https://x.com/" aria-label="X" className="social-link"><Twitter size={20} /></Link>
+              <Link href="https://instagram.com/@lokatechnologyllc" aria-label="Instagram" className="social-link"><Instagram size={20} /></Link>
+              <Link href="https://x.com/lokatechnologyllc" aria-label="X" className="social-link"><Twitter size={20} /></Link>
               <Link href="https://linkedin.com/" aria-label="LinkedIn" className="social-link"><Linkedin size={20} /></Link>
-              <Link href="https://tiktok.com/" aria-label="TikTok" className="social-link"><SiTiktok size={20} /></Link>
+              <Link href="https://tiktok.com/@lokatechnologyllc" aria-label="TikTok" className="social-link"><SiTiktok size={20} /></Link>
             </div>
           </div>
         </footer>
