@@ -3,22 +3,50 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"                        // << switch to MySQL
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id            String   @id @default(cuid())
-  email         String?  @unique
-  name          String?
-  image         String?
-  passwordHash  String?          // bcrypt lives here (works with your authorize())
-  stripeCustomerId String? @unique
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id               String   @id @default(cuid())
+  email            String?  @unique
+  name             String?
+  image            String?
+  passwordHash     String?
+  stripeCustomerId String?  @unique
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
 
-  accounts  Account[]
-  sessions  Session[]
+  accounts    Account[]
+  sessions    Session[]
+  resetTokens PasswordResetToken[]
+
+  profile UserProfile?
+}
+
+model UserProfile {
+  id     String @id @default(cuid())
+  userId String @unique
+
+  bio      String?
+  location String?
+  website  String?
+  birthday DateTime?
+  phone    String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, expiresAt])
 }
 
 model Account {
@@ -36,6 +64,7 @@ model Account {
   session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@unique([provider, providerAccountId])
 }
 
@@ -50,8 +79,20 @@ model Session {
 
 model VerificationToken {
   identifier String
-  token      String @unique
+  token      String   @unique
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Invite {
+  id           String    @id @default(cuid())
+  code         String    @unique
+  campaign     String?
+  maxUses      Int       @default(1)
+  usedCount    Int       @default(0)
+  createdAt    DateTime  @default(now())
+  expiresAt    DateTime
+  usedAt       DateTime?
+  usedByUserId String?
 }

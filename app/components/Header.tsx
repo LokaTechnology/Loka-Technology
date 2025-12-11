@@ -49,33 +49,30 @@ export default function Header() {
         onClick={close}
         tabIndex={-1}
       />
-
-      {/* Slide-down menu */}
-      <div id="main-menu" className={`mobile-panel ${open ? "open" : ""}`} role="dialog" aria-modal="true">
-        <div className="container mobile-panel-inner">
-          <nav className="mobile-links" aria-label="Main">
-            <Link href="/solutions" onClick={close}>Solutions</Link>
-            <Link href="/payment" onClick={close}>Pricing</Link>
-            <Link href="/partner" onClick={close}>Partner With Us</Link>
-            <Link href="/support" onClick={close}>Support Center</Link>
-            <Link href="/contact" onClick={close}>Contact Us</Link>
-            <Link href="/book" className="btn btn-primary" onClick={close}>Book a Locker</Link>
-
-            <div className="mobile-divider" />
-            <ThemeToggle />
-
-            {/* Auth ONLY inside the menu */}
-            <div className="drawer-auth">
-                <Link href="/login" className="btn btn-green-outline" onClick={close}>
-              Sign in
-            </Link>
-          <Link href="/register" className="btn btn-green" onClick={close}>
-              Create account
-            </Link>
-          </div>
-          </nav>
+        {/* Slide-in RIGHT drawer */}
+        <div
+            id="main-menu"
+            className={`mobile-panel ${open ? "open" : ""}`}
+            role="dialog"
+            aria-modal="true"
+        >
+            <div className="mobile-panel-inner">
+                <nav className="mobile-links" aria-label="Main">
+                    <Link href="/solutions" onClick={close}>Solutions</Link>
+                    <Link href="/payment" onClick={close}>Pricing</Link>
+                    <Link href="/partner" onClick={close}>Partner With Us</Link>
+                    <Link href="/support" onClick={close}>Support Center</Link>
+                    <Link href="/contact" onClick={close}>Contact Us</Link>
+                    <div className="mobile-divider" />
+                    <div className="drawer-auth">
+                        <Link href="/login" className="btn btn-green-outline" onClick={close}>Sign in</Link>
+                        <Link href="/register" className="btn btn-green" onClick={close}>Create account</Link>
+                    </div>
+                    <ThemeToggle />
+                </nav>
+            </div>
         </div>
-      </div>
+
     </header>
   );
 }

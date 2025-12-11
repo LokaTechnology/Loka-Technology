@@ -1,104 +1,134 @@
-
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "../auth/[...nextauth]/route";
+import { prisma } from "@/lib/prisma";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, { apiVersion: "2024-06-20" });
+export const runtime = "nodejs";
 
-const UNIT_PRICE_PER_HOUR_CENTS = { small: 150, medium: 250, large: 400 } as const;
-
-const PRICE_IDS = {
-  "monthly:small": process.env.STRIPE_PRICE_MONTHLY_SMALL ?? "",
-  "monthly:medium": process.env.STRIPE_PRICE_MONTHLY_MEDIUM ?? "",
-  "monthly:large": process.env.STRIPE_PRICE_MONTHLY_LARGE ?? "",
-  "semester:small": process.env.STRIPE_PRICE_SEMESTER_SMALL ?? "",
-  "semester:medium": process.env.STRIPE_PRICE_SEMESTER_MEDIUM ?? "",
-  "semester:large": process.env.STRIPE_PRICE_SEMESTER_LARGE ?? "",
-} as const;
-
-function getPriceId(plan: "monthly"|"semester", size: "small"|"medium"|"large") {
-  return PRICE_IDS[`${plan}:${size}` as const];
+const stripeKey = process.env.STRIPE_SECRET_KEY || "";
+if (!stripeKey.startsWith("sk_")) {
+    console.warn("[/api/checkout] Missing/invalid STRIPE_SECRET_KEY");
 }
+const stripe = stripeKey.startsWith("sk_")
+    ? new Stripe(stripeKey, { apiVersion: "2024-06-20" })
+    : null;
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+
+// REQUIRED for hourly flow (metered)
+const HOURLY_PRICE_ID = process.env.STRIPE_PRICE_HOURLY_METERED || "";
+
+// OPTIONAL (for when you re-enable subscriptions)
+const MONTHLY_PRICE_ID  = process.env.STRIPE_PRICE_MONTHLY_PASS  || "";
+const SEMESTER_PRICE_ID = process.env.STRIPE_PRICE_SEMESTER_PASS || "";
+
+type Plan = "hourly" | "monthly" | "semester";
+type Size = "small" | "medium" | "large";
 
 export async function POST(req: Request) {
-  try {
-    //Require auth via NextAuth
-    const session = await getServerSession(authOptions);
-    if (!session?.user?.email) {
-      return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
+    try {
+        if (!stripe) {
+            return NextResponse.json({ error: "Stripe not configured" }, { status: 500 });
+        }
+
+        const { plan, size, email } = (await req.json()) as {
+            plan: Plan;
+            size: Size;
+            email?: string;
+        };
+
+        if (!["hourly", "monthly", "semester"].includes(plan)) {
+            return NextResponse.json({ error: "Invalid plan" }, { status: 400 });
+        }
+        if (!["small", "medium", "large"].includes(size)) {
+            return NextResponse.json({ error: "Invalid size" }, { status: 400 });
+        }
+
+        // Try to attach to an existing signed-in user, but do NOT require auth.
+        const session = await getServerSession(authOptions).catch(() => null);
+
+        // Find/create Stripe customer ONLY if we have a signed-in user in DB
+        let customerId: string | undefined;
+        if (session?.user?.email) {
+            let user = await prisma.user.findUnique({ where: { email: session.user.email } });
+            if (user) {
+                if (!user.stripeCustomerId) {
+                    const cust = await stripe.customers.create({
+                        email: user.email ?? email ?? undefined,
+                        name: user.name ?? undefined,
+                        metadata: { app: "Loka", userId: user.id },
+                    });
+                    user = await prisma.user.update({
+                        where: { id: user.id },
+                        data: { stripeCustomerId: cust.id },
+                    });
+                }
+                customerId = user.stripeCustomerId ?? undefined;
+            }
+        }
+
+        const success_url = `${SITE_URL}/book?success=1`;
+        const cancel_url  = `${SITE_URL}/book?canceled=1`;
+
+        // ---------- HOURLY (metered subscription) ----------
+        if (plan === "hourly") {
+            if (!HOURLY_PRICE_ID) {
+                return NextResponse.json(
+                    { error: "Missing STRIPE_PRICE_HOURLY_METERED" },
+                    { status: 500 }
+                );
+            }
+
+            const session = await stripe.checkout.sessions.create({
+                mode: "subscription",
+                allow_promotion_codes: true,
+                customer: customerId,              // attach to signed-in user if available
+                customer_email: customerId ? undefined : (email || undefined), // else use email
+                line_items: [
+                    {
+                        price: HOURLY_PRICE_ID,       // metered price ($4 per hour)
+                        quantity: 1,
+                    },
+                ],
+                subscription_data: {
+                    metadata: { plan: "hourly", size },
+                },
+                success_url,
+                cancel_url,
+            });
+
+            return NextResponse.json({ url: session.url });
+        }
+
+        // ---------- MONTHLY / SEMESTER (recurring) ----------
+        const priceId =
+            plan === "monthly"  ? MONTHLY_PRICE_ID  :
+                plan === "semester" ? SEMESTER_PRICE_ID : "";
+
+        if (!priceId) {
+            return NextResponse.json(
+                { error: `Missing Stripe price ID for ${plan}` },
+                { status: 500 }
+            );
+        }
+
+        const session2 = await stripe.checkout.sessions.create({
+            mode: "subscription",
+            allow_promotion_codes: true,
+            customer: customerId,
+            customer_email: customerId ? undefined : (email || undefined),
+            line_items: [{ price: priceId, quantity: 1 }],
+            subscription_data: {
+                metadata: { plan, size },
+            },
+            success_url,
+            cancel_url,
+        });
+
+        return NextResponse.json({ url: session2.url });
+    } catch (err: any) {
+        console.error("[/api/checkout] error:", err?.message || err);
+        return NextResponse.json({ error: err?.message ?? "Server error" }, { status: 500 });
     }
-
-    const { plan, size, hours, email } = await req.json();
-
-    if (!["hourly","monthly","semester"].includes(plan)) {
-      return NextResponse.json({ error: "Invalid plan" }, { status: 400 });
-    }
-    if (!["small","medium","large"].includes(size)) {
-      return NextResponse.json({ error: "Invalid size" }, { status: 400 });
-    }
-    if (plan === "hourly") {
-      const h = Number(hours);
-      if (!Number.isFinite(h) || h < 1) {
-        return NextResponse.json({ error: "Hours must be a positive integer" }, { status: 400 });
-      }
-    }
-
-    // Attach Stripe customer to the logged-in user
-    let user = await prisma.user.findUnique({ where: { email: session.user.email } });
-    if (!user) return NextResponse.json({ error: "User not found" }, { status: 404 });
-
-    let stripeCustomerId = user.stripeCustomerId ?? undefined;
-    if (!stripeCustomerId) {
-      const customer = await stripe.customers.create({
-        email: user.email ?? email ?? undefined,
-        name: user.name ?? undefined,
-        metadata: { app: "Loka", userId: user.id },
-      });
-      stripeCustomerId = customer.id;
-      user = await prisma.user.update({ where: { id: user.id }, data: { stripeCustomerId } });
-    }
-
-    const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-    const success_url = `${base}/book/success?session_id={CHECKOUT_SESSION_ID}`;
-    const cancel_url  = `${base}/book?canceled=1`;
-
-    if (plan === "hourly") {
-      const cents = UNIT_PRICE_PER_HOUR_CENTS[size as keyof typeof UNIT_PRICE_PER_HOUR_CENTS] * Number(hours);
-      const sessionCheckout = await stripe.checkout.sessions.create({
-        mode: "payment",
-        customer: stripeCustomerId,
-        line_items: [{
-          price_data: {
-            currency: "usd",
-            product_data: { name: `Locker (${size}) — Hourly`, description: `${hours} hour${Number(hours) === 1 ? "" : "s"}` },
-            unit_amount: cents,
-          },
-          quantity: 1,
-        }],
-        success_url,
-        cancel_url,
-        metadata: { plan, size, hours: String(hours), userId: user.id },
-      });
-      return NextResponse.json({ url: sessionCheckout.url });
-    }
-
-    const priceId = getPriceId(plan, size);
-    if (!priceId) return NextResponse.json({ error: `Missing Stripe price for ${plan}/${size}` }, { status: 500 });
-
-    const sessionCheckout = await stripe.checkout.sessions.create({
-      mode: "subscription",
-      customer: stripeCustomerId,
-      line_items: [{ price: priceId, quantity: 1 }],
-      success_url,
-      cancel_url,
-      metadata: { plan, size, userId: user.id },
-    });
-
-    return NextResponse.json({ url: sessionCheckout.url });
-  } catch (err: any) {
-    console.error(err);
-    return NextResponse.json({ error: err?.message ?? "Server error" }, { status: 500 });
-  }
 }

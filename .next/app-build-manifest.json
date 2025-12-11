@@ -11,10 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/support/page": [
+    "/contact/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/support/page.js"
+      "static/chunks/app/contact/page.js"
+    ],
+    "/locations/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/locations/page.js"
     ],
     "/book/page": [
       "static/chunks/webpack.js",
@@ -26,15 +31,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/api/prices/route.js"
     ],
-    "/solutions/page": [
+    "/access/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/solutions/page.js"
+      "static/chunks/app/access/page.js"
     ],
-    "/partner/page": [
+    "/climate-controlled/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/partner/page.js"
+      "static/chunks/app/climate-controlled/page.js"
+    ],
+    "/pricing/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/pricing/page.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack.js",

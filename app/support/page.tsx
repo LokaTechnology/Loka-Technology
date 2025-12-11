@@ -1,4 +1,4 @@
-// app/support/page.tsx
+
 import Link from "next/link";
 
 export const metadata = {

@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
+import {signIn} from "next-auth/react";
+import { SiGoogle } from "react-icons/si";
+
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -105,6 +108,8 @@ export default function RegisterPage() {
                 </button>
               </div>
 
+
+
               {/* simple strength hint */}
               <div className="pw-meter" aria-hidden>
                 <div className={`pw-bar ${pw.length>=1 ? "on" : ""}`} />
@@ -119,8 +124,22 @@ export default function RegisterPage() {
             <button className="btn btn-primary" disabled={loading}>
               {loading ? "Creating…" : "Create account"}
             </button>
+              {/* Divider */}
+              <div className="divider"><span>or</span></div>
 
-            <p className="tiny-note">
+              {/* Social — only works if Google provider is configured */}
+              <button
+                  type="button"
+                  className="btn btn-outline"
+                  onClick = {()=>signIn("google", { callbackUrl: "/" })}
+                  disabled={loading}
+                  aria-label="Sign in with Google"
+              >
+                  <SiGoogle size={18} style={{ marginRight: 8 }} />
+                  Continue with Google
+              </button>
+
+              <p className="tiny-note">
               By creating an account, you agree to our <a href="/terms">Terms</a> and <a href="/privacy">Privacy Policy</a>.
             </p>
           </form>

@@ -1,7 +1,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
+import Loka1 from "../../public/images/loka.png";
+import Loka2 from "../../public/images/loka2.png";
+import Loka3 from "../../public/images/loka3.png";
+import Loka4 from "../../public/images/loka4.png";
+import Location from "../../public/images/locationasu.jpg";
+import Loka6 from "../../public/images/customerservice.jpg";
 /**
  * WHY US Section for Next.js (App or Pages Router)
  * - TailwindCSS required
@@ -11,6 +16,7 @@ import Link from "next/link";
  * Usage:
  *   <WhyUs />
  */
+
 
 const BRAND = {
   green: "#1E7D4B", // doors
@@ -23,23 +29,23 @@ const items = [
     title: "24/7 Access",
     body:
       "Our lockers work on your schedule—before class, after practice, or 2 AM study runs. Tap your Sun Card or scan a code for instant, contactless access.",
-    image: "/images/loka4.png",
+    image: Loka1,
     alt: "Phone opening a smart locker at night",
-    href: "/book",
+    href: "/access",
   },
   {
     title: "Climate-Controlled Units",
     body:
       "Keep laptops, lab kits, meds, and packages safe from Arizona heat. Monitored lockers maintain a stable temperature.",
-    image: "/images/loka2.png",
+    image: Loka2,
     alt: "Green climate-controlled locker bank with display",
-    href: "/solutions/climate",
+    href: "/climate-controlled",
   },
   {
     title: "Flexible Rental Options",
     body:
       "Pay only for what you need: hourly, daily, or monthly. Reserve online or at the kiosk, extend with a tap, cancel anytime—no hidden fees.",
-    image: "/images/loka4.png",
+    image: Loka3,
     alt: "Student reserving a locker at a kiosk",
     href: "/pricing",
   },
@@ -47,7 +53,7 @@ const items = [
     title: "Student‑Friendly Prices",
     body:
       "Affordable storage without compromise. Transparent pricing and bundle discounts for student orgs and teams.",
-    image: "/images/loka4.png",
+    image: Loka4,
     alt: "Best price ribbon over green background",
     href: "/pricing",
   },
@@ -55,7 +61,7 @@ const items = [
     title: "Real People, Real Help",
     body:
       "Campus-based support 7 days a week: in‑app chat, quick phone response, and on‑site techs during peak move‑in/out.",
-    image: "/images/loka4.png",
+    image: Loka6,
     alt: "Tech assisting a student at a locker bank",
     href: "/contact",
   },
@@ -63,7 +69,7 @@ const items = [
     title: "Convenient Locations",
     body:
       "Placed where students already are—near residence halls, dining, libraries, and transit. Brightly lit, ADA‑accessible bays.",
-    image: "/images/loka4.png",
+    image: Location,
     alt: "Map pins showing on-campus locker spots",
     href: "/locations",
   },
@@ -74,7 +80,6 @@ export default function WhyUs() {
     <section
       className="relative w-full py-16"
       style={{
-        // thin top accent bar using brand green
         backgroundImage: `linear-gradient(to right, ${BRAND.green} 0 100%)`,
         backgroundSize: "100% 4px",
         backgroundRepeat: "no-repeat",

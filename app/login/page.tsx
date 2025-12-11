@@ -96,7 +96,7 @@ export default function LoginPage() {
               />
               Remember me
             </label>
-            <a className="subtle" href="/reset">Forgot password?</a>
+              <a href="/forgot-password" className="cta-muted">Forgot your password? </a>
           </div>
 
           {/* Error */}
