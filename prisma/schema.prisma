@@ -84,3 +84,15 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model Invite {
+  id           String    @id @default(cuid())
+  code         String    @unique
+  campaign     String?
+  maxUses      Int       @default(1)
+  usedCount    Int       @default(0)
+  createdAt    DateTime  @default(now())
+  expiresAt    DateTime
+  usedAt       DateTime?
+  usedByUserId String?
+}

@@ -31,7 +31,7 @@ const items = [
       "Our lockers work on your schedule—before class, after practice, or 2 AM study runs. Tap your Sun Card or scan a code for instant, contactless access.",
     image: Loka1,
     alt: "Phone opening a smart locker at night",
-    href: "/book",
+    href: "/access",
   },
   {
     title: "Climate-Controlled Units",
@@ -80,7 +80,6 @@ export default function WhyUs() {
     <section
       className="relative w-full py-16"
       style={{
-        // thin top accent bar using brand green
         backgroundImage: `linear-gradient(to right, ${BRAND.green} 0 100%)`,
         backgroundSize: "100% 4px",
         backgroundRepeat: "no-repeat",
