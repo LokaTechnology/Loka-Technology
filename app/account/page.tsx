@@ -43,59 +43,42 @@ export default async function AccountPage() {
 
     return (
         <section className="section">
-            <div className="container" style={{ display: "grid", gap: 16 }}>
-                <div className="card" style={{ display:"grid", gap:12 }}>
-                    <header style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-                        <h1 style={{ margin:0 }}>My Account</h1>
-                        <form action="/api/auth/signout" method="post">
-                            <button className="btn btn-outline">Sign out</button>
-                        </form>
-                    </header>
+            <div className="container">
+                <div className="account-wrap">
+                    {/* Header / hero */}
+                    <div className="card account-hero">
+                        <header className="account-hero-head">
+                            <h1>My Account</h1>
+                            <form action="/api/auth/signout" method="post">
+                                <button className="btn btn-outline">Sign out</button>
+                            </form>
+                        </header>
 
-                    <div style={{ display:"flex", gap:12, alignItems:"center" }}>
-                        <img
-                            src={user.image ?? "/avatar-placeholder.png"}
-                            alt="Profile"
-                            width={64}
-                            height={64}
-                            style={{ borderRadius: "9999px", border: "1px solid var(--line)" }}
-                        />
-                        <div>
+                        {/* your small identity block */}
+                        <div className="account-identity">
                             <strong>{user.name ?? "—"}</strong>
                             <div className="text-muted">{user.email ?? "—"}</div>
-                            <div className="text-muted" style={{ fontSize: 13 }}>
-                                Google: {hasGoogle ? "Connected" : "Not connected"}
-                            </div>
+                            {user.accounts?.some(a => a.provider === "google") && (
+                                <div className="tiny-note">Google: Connected</div>
+                            )}
                         </div>
                     </div>
-                </div>
-                        {/* LEFT — Profile */}
-                        <ProfileForm
-                            initial={{
-                                name: user.name ?? "",
-                                email: user.email ?? "",
-                                image: user.image ?? "",
-                                bio: user.profile?.bio ?? "",
-                                location: user.profile?.location ?? "",
-                                website: user.profile?.website ?? "",
-                                phone: (user.profile as any)?.phone ?? "",
-                            }}
-                        />
-                        {/* RIGHT — Billing + summary */}
-                        <aside className="stack-col">
-                            <div className="card" style={{ display:"grid", gap:10 }}>
-                                <h2 style={{ marginTop:0 }}>Payments</h2>
-                                <p className="subtle" style={{ marginTop:-6 }}>
-                                    Update cards, view invoices, or cancel subscriptions.
-                                </p>
-                                <form action="/api/account/billing-portal" method="POST">
-                                    <button className="btn btn-primary" type="submit">Manage payment methods</button>
-                                </form>
-                            </div>
-                            
-                </aside>
-          </div>
- </section>
 
-  );
+                    {/* Profile form (unchanged JSX) */}
+                    <ProfileForm initial={{
+                        name: user.name ?? "",
+                        email: user.email ?? "",
+                        image: user.image ?? "",
+                        bio: user.profile?.bio ?? "",
+                        location: user.profile?.location ?? "",
+                        website: user.profile?.website ?? "",
+                        phone: user.profile?.phone ?? "",
+                    }} />
+
+                    {/* Payments section (optional) */}
+                    {/* <div className="card account-section">…</div> */}
+                </div>
+            </div>
+        </section>
+    );
 }

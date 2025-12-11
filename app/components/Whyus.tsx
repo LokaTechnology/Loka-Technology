@@ -1,12 +1,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Loka1 from "public/images /loka.png";
-import Loka2 from "public/images /loka2.png";
-import Loka3 from "public/images /loka3.png";
-import Loka4 from "public/images /loka4.png";
-import Location from "public/images /locationasu.jpg";
-import Loka6 from "public/images /customerservice.jpg";
+import Loka1 from "../../public/images/loka.png";
+import Loka2 from "../../public/images/loka2.png";
+import Loka3 from "../../public/images/loka3.png";
+import Loka4 from "../../public/images/loka4.png";
+import Location from "../../public/images/locationasu.jpg";
+import Loka6 from "../../public/images/customerservice.jpg";
 /**
  * WHY US Section for Next.js (App or Pages Router)
  * - TailwindCSS required
@@ -39,7 +39,7 @@ const items = [
       "Keep laptops, lab kits, meds, and packages safe from Arizona heat. Monitored lockers maintain a stable temperature.",
     image: Loka2,
     alt: "Green climate-controlled locker bank with display",
-    href: "/solutions/climate",
+    href: "/climate-controlled",
   },
   {
     title: "Flexible Rental Options",
