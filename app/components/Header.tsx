@@ -1,78 +1,32 @@
-// app/components/Header.tsx
 "use client";
 import Link from "next/link";
-import { useEffect, useState, useCallback } from "react";
-import { Menu, X } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
-  const close = useCallback(() => setOpen(false), []);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
-    if (open) window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open, close]);
-
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [open]);
-
   return (
     <header className="site-header">
       <nav className="header-edge">
-        <Link href="/" className="font-bold brand" style={{ textDecoration: "none", color: "#2f4f4f" }}>
-          Loka Technology Smart Storage Lockers
+        {/* Brand */}
+        <Link href="/" className="brand">
+          Loka Technology
         </Link>
 
-        {/* RIGHT: only Book + Hamburger */}
+        {/* Navigation Links */}
         <div className="topbar-actions">
-          <Link href="/book" className="btn btn-primary">Book a Locker</Link>
-          <button
-            className="hamburger"
-            aria-label="Toggle menu"
-            aria-expanded={open}
-            aria-controls="main-menu"
-            onClick={() => setOpen(v => !v)}
-          >
-            {open ? <X size={22} /> : <Menu size={22} />}
-          </button>
+          <Link href="/" className="nav-link">Home</Link>
+          <Link href="/product" className="nav-link">Product</Link>
+          <Link href="/services" className="nav-link">Services</Link>
+          <Link href="/work" className="nav-link">How It Works</Link>
+          <Link href="/use-cases" className="nav-link">Use Cases</Link>
+          <Link href="/why-loka" className="nav-link">Why Loka</Link>
+          <Link href="/contact" className="nav-link">Contact</Link>
+          <div className="nav-divider"></div>
+          <Link href="/login" className="btn btn-outline">Sign in</Link>
+          <Link href="/register" className="btn btn-primary">Create account</Link>
+          <Link href="/book" className="btn btn-primary">Request a Pilot</Link>
+          <ThemeToggle />
         </div>
       </nav>
-
-      {/* Backdrop */}
-      <button
-        className={`menu-backdrop ${open ? "show" : ""}`}
-        aria-hidden={!open}
-        onClick={close}
-        tabIndex={-1}
-      />
-        {/* Slide-in RIGHT drawer */}
-        <div
-            id="main-menu"
-            className={`mobile-panel ${open ? "open" : ""}`}
-            role="dialog"
-            aria-modal="true"
-        >
-            <div className="mobile-panel-inner">
-                <nav className="mobile-links" aria-label="Main">
-                    <Link href="/solutions" onClick={close}>Solutions</Link>
-                    <Link href="/payment" onClick={close}>Pricing</Link>
-                    <Link href="/partner" onClick={close}>Partner With Us</Link>
-                    <Link href="/support" onClick={close}>Support Center</Link>
-                    <Link href="/contact" onClick={close}>Contact Us</Link>
-                    <div className="mobile-divider" />
-                    <div className="drawer-auth">
-                        <Link href="/login" className="btn btn-green-outline" onClick={close}>Sign in</Link>
-                        <Link href="/register" className="btn btn-green" onClick={close}>Create account</Link>
-                    </div>
-                    <ThemeToggle />
-                </nav>
-            </div>
-        </div>
-
     </header>
   );
 }
