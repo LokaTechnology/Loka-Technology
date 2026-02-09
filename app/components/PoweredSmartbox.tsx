@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function PoweredBySmartbox() {
   return (
     <section className="section">
@@ -5,7 +7,7 @@ export default function PoweredBySmartbox() {
         <h2 className="mt-3">Powered by Smartbox Technology</h2>
 
         <p className="subtle max-w-2xl">
-          Loka lockers are built on Smartbox’s enterprise-grade platform —
+          Loka lockers are built on Smartbox’s enterprise-grade platform
           trusted globally for secure, high-volume locker deployments
           in education, logistics, and public infrastructure.
         </p>
@@ -16,6 +18,16 @@ export default function PoweredBySmartbox() {
           <li>API-ready for campus system integrations</li>
           <li>Proven hardware with anti-tamper sensors</li>
         </ul>
+        <div style={{ marginTop: 16 }}>
+                  <Link
+                    href="https://www.smartboxlockers.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="cta-muted"
+                  >
+                    Learn more about Smartbox Technology →
+                  </Link>
+                </div>
       </div>
     </section>
   );

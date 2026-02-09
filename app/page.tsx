@@ -26,10 +26,15 @@ export default function Home() {
                   Loka Smart Lockers for Modern University Campuses
                 </h3>
 
-                <p className="text-muted max-w-xl">
-                  Reduce front-desk congestion, secure student assets, and enable
-                  24/7 self-service storage with enterprise-grade smart locker technology.
+                <p className="text-muted max-w-2xl">
+                  University campuses are facing growing demands for secure, always-available
+                  storage and asset control. Loka delivers a modern smart locker system designed
+                  specifically for higher education combining secure access, 24/7 availability,
+                  and real-time monitoring through a centralized management platform. The result
+                  is safer campuses, reduced administrative burden, and greater confidence for
+                  students and staff.
                 </p>
+
 
                 <div className="flex gap-3 flex-wrap pt-2">
                   <Link href="/book" className="btn btn-primary">

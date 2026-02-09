@@ -50,21 +50,22 @@ declare namespace __next_route_internal_types__ {
     | `/book`
     | `/climate-controlled`
     | `/contact`
-    | `/login`
     | `/forgot-password`
-    | `/partner`
     | `/locations`
-    | `/product`
+    | `/login`
+    | `/partner`
+    | `/payment`
     | `/pricing`
+    | `/pricing/pilot`
+    | `/product`
     | `/register`
     | `/reset-password`
-    | `/payment`
     | `/services`
-    | `/support`
     | `/solutions`
-    | `/work`
+    | `/support`
     | `/use-cases`
     | `/why-loka`
+    | `/work`
   type DynamicRoutes<T extends string = string> = 
     | `/api/auth/${CatchAllSlug<T>}`
 
