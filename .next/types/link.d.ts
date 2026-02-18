@@ -35,15 +35,15 @@ declare namespace __next_route_internal_types__ {
     | `/account/settings`
     | `/api/account/billing-portal`
     | `/api/account/change-password`
-    | `/api/account/disconnect/google`
     | `/api/account/profile`
-    | `/api/auth/forgot`
+    | `/api/account/disconnect/google`
     | `/api/auth/reset`
+    | `/api/auth/forgot`
     | `/api/booking`
-    | `/api/checkout`
     | `/api/locker/open`
-    | `/api/prices`
     | `/api/register`
+    | `/api/prices`
+    | `/api/checkout`
     | `/api/report-issue`
     | `/api/sessions`
     | `/api/webhook`
@@ -52,20 +52,20 @@ declare namespace __next_route_internal_types__ {
     | `/contact`
     | `/forgot-password`
     | `/locations`
-    | `/login`
     | `/partner`
+    | `/login`
     | `/payment`
+    | `/product`
     | `/pricing`
     | `/pricing/pilot`
-    | `/product`
-    | `/register`
     | `/reset-password`
+    | `/register`
     | `/services`
-    | `/solutions`
     | `/support`
+    | `/solutions`
     | `/use-cases`
-    | `/why-loka`
     | `/work`
+    | `/why-loka`
   type DynamicRoutes<T extends string = string> = 
     | `/api/auth/${CatchAllSlug<T>}`
 

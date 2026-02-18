@@ -1,139 +1,77 @@
 export const metadata = {
-  title: "Pilot Program – Loka Smart Lockers",
+  title: "Semester Pilot Program – Loka",
 };
 
 export default function PilotProgramPage() {
   return (
     <main className="section">
-      <div className="container space-y-10">
+      <div className="container">
 
-        {/* Header */}
-        <section className="max-w-3xl">
-          <h1>Pilot Program Overview</h1>
-          <p className="text-muted">
-            Loka pilot programs allow universities to evaluate smart locker
-            deployments in a controlled, low-risk environment before committing
-            to a broader rollout.
-          </p>
-        </section>
+        <h1>Semester-Based Pilot Program</h1>
+        <p className="text-muted max-w-2xl">
+          A structured, data-driven pilot allowing universities to evaluate
+          performance before committing to long-term deployment.
+        </p>
 
         <hr />
 
-        {/* What the pilot is */}
+        {/* Structure */}
         <section className="section max-w-3xl">
-          <h2>What the Pilot Includes</h2>
-          <p>
-            Pilot deployments are short-term installations designed to validate
-            operational impact, user adoption, and system performance. The pilot
-            focuses on real campus usage rather than demonstrations or mock
-            environments.
-          </p>
-
-          <ul className="feature-list mt-4">
-            <li>Limited smart locker installation at selected campus location(s)</li>
-            <li>Configuration aligned to approved campus access methods</li>
-            <li>Administrative dashboard access for monitoring and reporting</li>
-            <li>Operational support during the pilot period</li>
-          </ul>
-        </section>
-
-        {/* Timeline */}
-        <section className="section">
-          <h2>Pilot Timeline</h2>
-
-          <div className="grid-2 mt-6">
-            <div className="card">
-              <h3>Phase 1 — Planning</h3>
-              <p>
-                Coordination with facilities, IT, and security stakeholders to
-                confirm scope, location, access methods, and success criteria.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3>Phase 2 — Installation</h3>
-              <p>
-                Delivery and installation of lockers, system configuration, and
-                verification of network and access requirements.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3>Phase 3 — Live Operation</h3>
-              <p>
-                Active campus use with real-time monitoring, usage tracking, and
-                issue resolution as needed.
-              </p>
-            </div>
-
-            <div className="card">
-              <h3>Phase 4 — Evaluation</h3>
-              <p>
-                Review of usage data, operational feedback, and recommendations
-                for expansion or modification.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Success criteria */}
-        <section className="section max-w-3xl">
-          <h2>Evaluation Criteria</h2>
+          <h2>Pilot Structure</h2>
           <ul className="feature-list">
-            <li>User adoption and utilization patterns</li>
-            <li>Impact on staffing and administrative workload</li>
-            <li>System reliability and uptime</li>
-            <li>Alignment with campus security policies</li>
-            <li>Feedback from operational stakeholders</li>
+            <li>Limited installation at approved campus location(s)</li>
+            <li>Semester-length evaluation period</li>
+            <li>Full dashboard access and reporting</li>
+            <li>Operational and technical support included</li>
           </ul>
         </section>
 
-        {/* Responsibilities — VERY IMPORTANT */}
+        {/* Success metrics */}
         <section className="section">
-          <h2>University Responsibilities</h2>
+          <h2>Defined Success Metrics</h2>
 
-          <div className="card max-w-3xl">
-            <p className="subtle">
-              During the pilot, the university is responsible for the following:
-            </p>
+          <div className="grid-2">
+            <div className="card">
+              <h3>User Adoption</h3>
+              <p>Utilization rates and repeat usage patterns.</p>
+            </div>
 
-            <ul className="feature-list mt-3">
-              <li>Providing physical space for locker installation</li>
-              <li>Electrical power and network connectivity</li>
-              <li>Coordination with internal IT, facilities, and security teams</li>
-              <li>Approval of access methods and user policies</li>
-              <li>Compliance with institutional privacy and data policies</li>
-            </ul>
+            <div className="card">
+              <h3>Operational Impact</h3>
+              <p>Reduction in staffing burden and front-desk congestion.</p>
+            </div>
+
+            <div className="card">
+              <h3>System Reliability</h3>
+              <p>Uptime performance and issue resolution timelines.</p>
+            </div>
+
+            <div className="card">
+              <h3>Policy Alignment</h3>
+              <p>Compliance with institutional security and privacy standards.</p>
+            </div>
           </div>
         </section>
 
-        {/* What happens after */}
+        {/* No long term commitment */}
         <section className="section max-w-3xl">
-          <h2>Post-Pilot Outcomes</h2>
+          <h2>No Long-Term Commitment Upfront</h2>
           <p>
-            Upon completion of the pilot, Loka provides a summary of operational
-            findings to support internal decision-making. Institutions may
-            choose to expand, modify, or conclude the deployment based on pilot
-            results.
+            At the end of the semester, the university receives a formal
+            performance report supporting a data-backed go/no-go decision.
+          </p>
+          <p className="mt-3">
+            Institutions may expand, modify, or conclude the deployment
+            without contractual obligation beyond the pilot term.
           </p>
         </section>
 
         {/* CTA */}
         <section className="section card text-center">
-          <h2>Apply for a Pilot Program</h2>
-          <p className="text-muted max-w-xl mx-auto">
-            Pilot availability is limited and subject to campus readiness and
-            deployment scope.
-          </p>
-
-          <div className="flex gap-4 justify-center mt-6 flex-wrap">
-            <a href="/contact" className="btn btn-primary">
-              Apply for Pilot
-            </a>
-            <a href="/pricing" className="btn btn-outline">
-              Back to Pricing
-            </a>
-          </div>
+          <h2>Apply for a Semester Pilot</h2>
+          <a href="/contact" className="btn btn-primary mt-4">
+            Apply for Pilot
+          </a>
         </section>
 
       </div>
