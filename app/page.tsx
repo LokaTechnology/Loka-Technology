@@ -37,7 +37,7 @@ export default function Home() {
 
 
                 <div className="flex gap-3 flex-wrap pt-2">
-                  <Link href="/book" className="btn btn-primary">
+                                    <Link href="/pricing/pilot" className="btn btn-primary">
                     Request a Pilot
                   </Link>
                   <Link href="/contact" className="btn btn-outline">
