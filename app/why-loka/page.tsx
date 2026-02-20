@@ -1,87 +1,107 @@
 
 export default function WhyLokaPage() {
-    return (
-      <main className="section">
-        <div className="container">
-  
-          <span className="kicker">Why Loka</span>
-          <h1>Built for Campuses </h1>
-          <p className="text-muted">
-            Most smart locker systems weren’t designed for universities. Loka is.
-          </p>
-  
-          <hr />
-  
-          <div className="grid-2 section">
-            <div>
-              <h2>The Problem With Traditional Smart Lockers</h2>
+  return (
+    <main className="section">
+      <div className="container">
+
+        {/* Header */}
+        <h1>Why Loka</h1>
+        <p className="text-muted max-w-2xl">
+          Universities can purchase lockers. Or they can deploy a managed,
+          accountable campus storage platform. Loka focuses on outcomes —
+          not just equipment.
+        </p>
+
+        <hr />
+
+        {/* Vendor vs Loka */}
+        <section className="section">
+          <h2>Why Not Go Direct to a Locker Vendor?</h2>
+
+          <div className="grid-2 mt-6">
+
+            <div className="card">
+              <h3>Hardware Vendors Sell Equipment</h3>
               <ul className="feature-list">
-                <li>Designed for logistics, not students</li>
-                <li>Rigid pricing and long-term contracts</li>
-                <li>Complex setup and poor admin tools</li>
-                <li>Little flexibility for campus policies</li>
+                <li>Upfront hardware purchase</li>
+                <li>Limited operational oversight</li>
+                <li>Reactive support models</li>
+                <li>Fragmented responsibility across departments</li>
               </ul>
             </div>
-  
+
             <div className="card">
-              <h3>What Campuses Actually Need</h3>
-              <p className="subtle">
-                Universities need systems that adapt to semesters, events,
-                facilities, and student behavior — not the other way around.
+              <h3>Loka Manages Outcomes</h3>
+              <ul className="feature-list">
+                <li>End-to-end operational ownership</li>
+                <li>Data analytics and reporting</li>
+                <li>24/7 monitoring and support</li>
+                <li>Performance accountability</li>
+              </ul>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Vendor sprawl risk */}
+        <section className="section max-w-3xl">
+          <h2>Avoid Vendor Sprawl & Operational Risk</h2>
+          <p>
+            Direct hardware procurement often results in separate vendors
+            for hardware, software, maintenance, and integration. This
+            increases institutional risk and diffuses accountability.
+          </p>
+          <p className="mt-3">
+            Loka serves as a single operational partner — consolidating
+            hardware sourcing, system management, analytics, support,
+            and expansion planning under one accountable structure.
+          </p>
+        </section>
+
+        {/* What We Own */}
+        <section className="section">
+          <h2>What Loka Owns</h2>
+
+          <div className="grid-2">
+            <div className="card">
+              <h3>Operations</h3>
+              <p>
+                Continuous monitoring, issue resolution, and performance oversight.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>Data & Reporting</h3>
+              <p>
+                Usage metrics, adoption rates, and expansion planning insights.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>System Reliability</h3>
+              <p>
+                Preventive maintenance and proactive uptime management.
+              </p>
+            </div>
+
+            <div className="card">
+              <h3>Accountability</h3>
+              <p>
+                A single partner responsible for performance and campus outcomes.
               </p>
             </div>
           </div>
-  
-          <div className="section">
-            <h2>What Makes Loka Different</h2>
-  
-            <div className="grid-2">
-              <div className="card">
-                <h3>Campus-First Design</h3>
-                <p>
-                  Built specifically for universities, libraries, rec centers,
-                  and student unions.
-                </p>
-              </div>
-  
-              <div className="card">
-                <h3>Flexible Access & Policies</h3>
-                <p>
-                  Support ID cards, QR codes, timed access, reservations,
-                  and admin-defined rules.
-                </p>
-              </div>
-  
-              <div className="card">
-                <h3>Admin-Friendly Dashboard</h3>
-                <p>
-                  Monitor usage, resolve issues, and manage lockers
-                  without extra staff.
-                </p>
-              </div>
-  
-              <div className="card">
-                <h3>Modern & Reliable Hardware</h3>
-                <p>
-                  Commercial-grade lockers designed for high-traffic campus use.
-                </p>
-              </div>
-            </div>
-          </div>
-  
-          <div className="section">
-            <div className="card cta-card">
-            <h2>Designed for Long-Term Reliability</h2>
-             <p className="subtle">
-                Loka systems are monitored, maintained, and updated to ensure
-                consistent uptime throughout the academic year.
-                </p>
-            <a href="/contact" className="btn btn-primary">Talk to Us</a>
-            </div>
-          </div>
-  
-        </div>
-      </main>
-    );
-  }
-  
+        </section>
+
+        {/* CTA */}
+        <section className="section card text-center">
+          <h2>Choose a Managed Outcome, Not Just Hardware</h2>
+          <a href="/pricing/pilot" className="btn btn-primary mt-4">
+            Evaluate a Pilot Deployment
+          </a>
+        </section>
+
+      </div>
+    </main>
+  );
+}

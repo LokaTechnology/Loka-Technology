@@ -11,35 +11,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/book/page": [
+    "/locations/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/book/page.js"
+      "static/chunks/app/locations/page.js"
     ],
-    "/api/prices/route": [
+    "/contact/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/api/prices/route.js"
-    ],
-    "/product/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/product/page.js"
-    ],
-    "/services/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/services/page.js"
-    ],
-    "/use-cases/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/use-cases/page.js"
-    ],
-    "/work/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/work/page.js"
+      "static/chunks/app/contact/page.js"
     ],
     "/pricing/page": [
       "static/chunks/webpack.js",
@@ -51,20 +31,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/why-loka/page.js"
     ],
-    "/contact/page": [
+    "/book/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/contact/page.js"
+      "static/chunks/app/book/page.js"
     ],
-    "/pricing/pilot/page": [
+    "/api/prices/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pricing/pilot/page.js"
+      "static/chunks/app/api/prices/route.js"
     ],
-    "/_not-found/page": [
+    "/register/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/register/page.js"
     ]
   }
 }

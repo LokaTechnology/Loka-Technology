@@ -60,10 +60,10 @@ declare namespace __next_route_internal_types__ {
     | `/product`
     | `/register`
     | `/reset-password`
-    | `/services`
     | `/solutions`
     | `/support`
     | `/use-cases`
+    | `/services`
     | `/why-loka`
     | `/work`
   type DynamicRoutes<T extends string = string> = 
