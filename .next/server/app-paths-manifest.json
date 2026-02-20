@@ -1,9 +1,0 @@
-{
-  "/api/prices/route": "app/api/prices/route.js",
-  "/page": "app/page.js",
-  "/pricing/page": "app/pricing/page.js",
-  "/why-loka/page": "app/why-loka/page.js",
-  "/book/page": "app/book/page.js",
-  "/register/page": "app/register/page.js",
-  "/contact/page": "app/contact/page.js"
-}
