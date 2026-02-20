@@ -37,7 +37,7 @@ export default function Home() {
 
 
                 <div className="flex gap-3 flex-wrap pt-2">
-                                    <Link href="/pricing/pilot" className="btn btn-primary">
+                                                                        <Link href="/pricing" className="btn btn-primary">
                     Request a Pilot
                   </Link>
                   <Link href="/contact" className="btn btn-outline">
@@ -67,14 +67,7 @@ export default function Home() {
 
             {/* ABOUT + IMAGE */}
             <section style={{ maxWidth: 1140, margin: "0 auto", padding: "40px 16px" }}>
-                <div
-                    style={{
-                        display: "grid",
-                        gridTemplateColumns: "1.1fr .9fr",
-                        gap: 24,
-                        alignItems: "start",
-                    }}
-                >
+                <div className="grid-2">
                     <div>
                         <h2
                             style={{

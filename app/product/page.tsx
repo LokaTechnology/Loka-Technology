@@ -142,7 +142,7 @@ export default function ProductPage() {
             and system reliability using real-world data.
           </p>
 
-          <a href="/pricing/pilot" className="btn btn-primary mt-4">
+          <a href="/pricing" className="btn btn-primary mt-4">
             Request a Free Pilot
           </a>
         </section>

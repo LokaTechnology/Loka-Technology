@@ -128,7 +128,7 @@ export default function HowItWorksPage() {
             See how Loka works on your campus before committing to a full deployment.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/pricing/pilot" className="btn btn-green" style={{ fontSize: 16, padding: "12px 24px" }}>
+            <Link href="/pricing" className="btn btn-green" style={{ fontSize: 16, padding: "12px 24px" }}>
               Request a Pilot
             </Link>
             <Link href="/contact" className="btn btn-outline" style={{ fontSize: 16, padding: "12px 24px" }}>

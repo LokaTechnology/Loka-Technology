@@ -96,7 +96,7 @@ export default function WhyLokaPage() {
         {/* CTA */}
         <section className="section card text-center">
           <h2>Choose a Managed Outcome, Not Just Hardware</h2>
-          <a href="/pricing/pilot" className="btn btn-primary mt-4">
+          <a href="/pricing" className="btn btn-primary mt-4">
             Evaluate a Pilot Deployment
           </a>
         </section>

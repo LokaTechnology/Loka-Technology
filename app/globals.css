@@ -574,7 +574,7 @@ body { background: var(--bg); color: var(--fg); }
 
 /* Mobile: stack to one column */
 @media (max-width: 500px) {
-    .account-wrap { max-width: 50%; }
+  .account-wrap { max-width: 100%; }
     .profile-card .fields-grid { grid-template-columns: 1fr; }
 }
 
@@ -809,14 +809,29 @@ body { background: var(--bg); color: var(--fg); }
 }
 
 @media (max-width: 900px) {
-  .topbar-actions .btn-outline {
-    display: none;
-  }
   .nav-link {
     display: none;
   }
   .nav-divider {
     display: none;
+  }
+  .header-edge {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+  .topbar-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .topbar-actions .btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .brand {
+    font-size: 16px;
   }
 }
 

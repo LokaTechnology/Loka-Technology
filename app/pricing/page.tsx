@@ -11,7 +11,7 @@ export default function PricingPage() {
       <div className="container space-y-10">
 
         {/* Hero */}
-        <section className="relative h-56 rounded-xl overflow-hidden border">
+        <section className="relative h-44 sm:h-56 rounded-xl overflow-hidden border">
           <Image
             src="/images/loka4.png"
             alt="Smart lockers on a university campus"
@@ -20,7 +20,7 @@ export default function PricingPage() {
             priority
           />
           <div className="absolute inset-0 bg-black/30" />
-          <h1 className="absolute bottom-4 left-6 text-white text-3xl font-bold">
+          <h1 className="absolute bottom-3 left-4 sm:bottom-4 sm:left-6 text-white text-xl sm:text-3xl font-bold">
             Campus Pricing & Pilot Programs
           </h1>
         </section>
@@ -65,7 +65,7 @@ export default function PricingPage() {
             <a href="/contact" className="btn btn-primary">
               Request Pricing
             </a>
-            <a href="/pricing/pilot" className="btn btn-outline">
+            <a href="/pricing" className="btn btn-outline">
               Apply for Pilot
             </a>
           </div>

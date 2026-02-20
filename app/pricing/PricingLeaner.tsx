@@ -14,8 +14,7 @@ export default function PricingLeaner() {
   const [deployment, setDeployment] = useState<Deployment>("pilot");
 
   return (
-    <section className="section">
-      <div className="container space-y-6">
+    <section className="space-y-6">
 
         <header>
           <h2>Deployment Options</h2>
@@ -84,7 +83,6 @@ export default function PricingLeaner() {
           </div>
         </div>
 
-      </div>
     </section>
   );
 }
