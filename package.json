@@ -5,6 +5,7 @@
   "scripts": {
     "prisma:migrate": "dotenv -e .env.local -- prisma migrate dev",
     "prisma:generate": "dotenv -e .env.local -- prisma generate",
+    "postinstall": "prisma generate",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"

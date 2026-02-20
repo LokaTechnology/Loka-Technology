@@ -35,7 +35,7 @@ export default async function SettingsPage() {
         );
     }
 
-    const hasGoogle = user.accounts.some(a => a.provider === "google");
+    const hasGoogle = user.accounts.some((a: { provider: string }) => a.provider === "google");
     const hasPassword = !!user.passwordHash;
 
     return (

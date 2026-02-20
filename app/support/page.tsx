@@ -109,7 +109,7 @@ export default function SupportPage() {
                                 </div>
                                 <div className="summary-row">
                                     <div><strong>Payment failed</strong><div className="subtle">Update your card, then retry checkout</div></div>
-                                    <Link href="/account/billing" className="cta-muted">Billing</Link>
+                                    <Link href="/account/settings" className="cta-muted">Billing</Link>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +175,7 @@ export default function SupportPage() {
                                 </div>
                             </div>
                             <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
-                                <Link href="/status" className="btn btn-outline">System status</Link>
+                                <a href="/status" className="btn btn-outline">System status</a>
                                 <a href="tel:619-616-6828" className="btn btn-primary">Call now</a>
                             </div>
                         </div>
@@ -184,10 +184,10 @@ export default function SupportPage() {
                         <div className="card">
                             <span className="kicker">Policies</span>
                             <ul className="feature-list" style={{ marginTop: 6 }}>
-                                <li><Link href="/legal/terms" className="underlinedText">Terms of Service</Link></li>
-                                <li><Link href="/legal/privacy" className="underlinedText">Privacy Policy</Link></li>
-                                <li><Link href="/legal/hardware-support" className="underlinedText">Hardware &amp; Support Policy</Link></li>
-                                <li><Link href="/legal/campus-policy" className="underlinedText">Campus Use Policy</Link></li>
+                                <li><a href="/legal/terms" className="underlinedText">Terms of Service</a></li>
+                                <li><a href="/legal/privacy" className="underlinedText">Privacy Policy</a></li>
+                                <li><a href="/legal/hardware-support" className="underlinedText">Hardware &amp; Support Policy</a></li>
+                                <li><a href="/legal/campus-policy" className="underlinedText">Campus Use Policy</a></li>
                             </ul>
                         </div>
                     </aside>

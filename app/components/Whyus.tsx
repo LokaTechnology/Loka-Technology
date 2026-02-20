@@ -1,6 +1,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { Route } from "next";
+import type { StaticImageData } from "next/image";
 import Loka1 from "../../public/images/loka.png";
 import Loka2 from "../../public/images/loka2.png";
 import Loka3 from "../../public/images/loka3.png";
@@ -24,7 +26,13 @@ const BRAND = {
   yellow: "#FFC606", // accents
 };
 
-const items = [
+const items: Array<{
+  title: string;
+  body: string;
+  image: StaticImageData;
+  alt: string;
+  href: Route;
+}> = [
   {
     title: "24/7 Access",
     body:

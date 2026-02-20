@@ -39,7 +39,7 @@ export default async function AccountPage() {
         );
     }
 
-    const hasGoogle = user.accounts.some(a => a.provider === "google");
+    const hasGoogle = user.accounts.some((a: { provider: string }) => a.provider === "google");
 
     return (
         <section className="section">
@@ -58,7 +58,7 @@ export default async function AccountPage() {
                         <div className="account-identity">
                             <strong>{user.name ?? "—"}</strong>
                             <div className="text-muted">{user.email ?? "—"}</div>
-                            {user.accounts?.some(a => a.provider === "google") && (
+                            {hasGoogle && (
                                 <div className="tiny-note">Google: Connected</div>
                             )}
                         </div>

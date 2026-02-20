@@ -7,7 +7,7 @@ import { prisma } from "@/lib/prisma";
 import { compare } from "bcryptjs";
 import NextAuth from "next-auth";
 
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
     // Use the adapter if you have Account/Session/VerificationToken tables (NextAuth schema)
     adapter: PrismaAdapter(prisma) as any,
 

@@ -44,7 +44,7 @@ export default function PartnerPage() {
               <a className="btn btn-outline" href="https://www.americanlocker.com/" target="_blank" rel="noreferrer">
                 About American Locker
               </a>
-              <Link className="btn btn-primary" href="/support/ticket">Open a hardware ticket</Link>
+              <Link className="btn btn-primary" href="/support">Open a hardware ticket</Link>
             </div>
           </div>
         </div>

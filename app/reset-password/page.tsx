@@ -1,10 +1,12 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense, useMemo } from "react";
 import { useState } from "react";
 
-export default function ResetPasswordPage() {
+function ResetPasswordForm() {
     const router = useRouter();
-    const token = useSearchParams().get("token") || "";
+    const searchParams = useSearchParams();
+    const token = useMemo(() => searchParams.get("token") || "", [searchParams]);
     const [pw, setPw] = useState("");
     const [pw2, setPw2] = useState("");
     const [err, setErr] = useState<string | null>(null);
@@ -49,5 +51,13 @@ export default function ResetPasswordPage() {
                 </div>
             </div>
         </section>
+    );
+}
+
+export default function ResetPasswordPage() {
+    return (
+        <Suspense fallback={<div className="section"><div className="container"><div className="card">Loading…</div></div></div>}>
+            <ResetPasswordForm />
+        </Suspense>
     );
 }
