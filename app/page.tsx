@@ -1,10 +1,11 @@
-// app/page.tsx — Loka Tech Home Page (Next.js App Router + Tailwind)
+
 import Link from "next/link";
 import Image from "next/image";
 
 import Carousel from "./components/Carousel";
 import WhyUs from "./components/Whyus";
 import LockerInfo from "./components/Faq";
+import PoweredSmartbox from "./components/PoweredSmartbox";
 
 const slides = [
     { src: "/images/loka5.png", alt: "Locker wall — library atrium" },
@@ -17,43 +18,52 @@ const slides = [
 export default function Home() {
     return (
         <div className="space-y-10" style={{ marginTop: 8 }}>
-            {/* HERO */}
-            <section
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "1.05fr .95fr",
-                    gap: 24,
-                    alignItems: "start",
-                    marginTop: 8,
-                }}
-            >
-                <div className="card" style={{ padding: 0, overflow: "hidden" }}>
-                    {/* Use runtime path + width/height */}
-                    <Image
-                        src="/images/loka5.png"
-                        alt="Smart locker"
-                        width={1600}
-                        height={900}
-                        priority
-                        style={{ width: "100%", height: "auto", display: "block" }}
-                    />
-                </div>
-                <div style={{ alignSelf: "start", padding: "4px 4px 0" }}>
-                    <h1 style={{ margin: "0 0 60px" }}>
-                        SMART CAMPUS LOCKERS. SAFETY &amp; CONVENIENCE
-                    </h1>
+            {/* HERO SECTION */}
+            <section className="container hero-grid py-12">
+              {/* LEFT: Text */}
+              <div className="space-y-5">
+                <h3 className="text-4xl font-bold leading-snug max-w-2xl">
+                  Loka Smart Lockers for Modern University Campuses
+                </h3>
 
-                    <h3 className="text-muted" style={{ maxWidth: 700, margin: "0 0 10px" }}>
-                        We design, install, and manage secure smart lockers so students and
-                        faculty save time.
-                    </h3>
+                <p className="text-muted max-w-2xl">
+                  University campuses are facing growing demands for secure, always-available
+                  storage and asset control. Loka delivers a modern smart locker system designed
+                  specifically for higher education combining secure access, 24/7 availability,
+                  and real-time monitoring through a centralized management platform. The result
+                  is safer campuses, reduced administrative burden, and greater confidence for
+                  students and staff.
+                </p>
 
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 30, margin: "0 0 20px" }}>
-                        <Link href="/book" className="btn btn-primary">Book a Locker Today</Link>
-                        <Link href="/partner" className="btn btn-outline">Partner With Us</Link>
-                    </div>
+
+                <div className="flex gap-3 flex-wrap pt-2">
+                  <Link href="/book" className="btn btn-primary">
+                    Request a Pilot
+                  </Link>
+                  <Link href="/contact" className="btn btn-outline">
+                    Talk to Us
+                  </Link>
                 </div>
+
+                {/* Smartbox credibility — quieter */}
+                <div className="pt-4 max-w-md">
+                  <PoweredSmartbox />
+                </div>
+              </div>
+
+              {/* RIGHT: Image */}
+              <div className="hero-image">
+                <Image
+                  src="/images/loka5.png"
+                  alt="Smart locker campus installation"
+                  width={1600}
+                  height={1000}
+                  priority
+                  className="rounded-2xl object-cover"
+                />
+              </div>
             </section>
+
 
             {/* ABOUT + IMAGE */}
             <section style={{ maxWidth: 1140, margin: "0 auto", padding: "40px 16px" }}>
@@ -101,7 +111,7 @@ export default function Home() {
                             Built by University Alumni (ASU) and shaped by real campus routines. Students unlock with{" "}
                             <strong>University ID cards</strong> or <strong>university login via QR code</strong>. The lockers are
                             protected by <strong>encrypted access, steel construction, CCTV</strong>, and{" "}
-                            <strong>tamper alerts</strong> with privacy in mind. By reducing “where do I stash this?” stress,
+                            <strong>tamper alerts</strong> with privacy in mind. By reducing "where do I stash this?" stress,
                             students <strong>engage more safely and confidently</strong> in clubs, labs, classes, and campus events.
                         </p>
 
@@ -127,7 +137,6 @@ export default function Home() {
                             overflow: "hidden",
                         }}
                     >
-                        {/* Using fill here is fine */}
                         <Image
                             src="/images/loka.png"
                             alt="Loka smart lockers on campus"
@@ -142,7 +151,7 @@ export default function Home() {
             {/* TOUR / CAROUSEL */}
             <section style={{ maxWidth: 1140, margin: "0 auto", padding: "40px 16px" }}>
                 <h2>
-                    Take a Virtual Tour of Loka Technology Smart Storage Lockers&apos;s Top-Notch Self Storage Facility
+                    See Our Smart Lockers in Action on Campus
                 </h2>
                 <div style={{ marginTop: 12 }}>
                     <Carousel slides={slides} aspect="16 / 9" autoMs={5000} />

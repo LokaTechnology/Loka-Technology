@@ -45,8 +45,8 @@ h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: .5px; }
 
 .underlinedText{
     text-decoration: underline;
-} 
-  
+}
+
 
 /* Footer separation & lighter background */
 .site-footer {
@@ -54,7 +54,7 @@ h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: .5px; }
     border-top: 1px solid #e5e7eb;  /* subtle divider */
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
   }
-  
+
   /* Optional: if your site uses a dark theme elsewhere */
   @media (prefers-color-scheme: dark) {
     .site-footer {
@@ -63,7 +63,7 @@ h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: .5px; }
       box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
     }
   }
-  
+
   /* (Optional) container helper if not already defined */
   .container {
     max-width: 1100px;
@@ -71,7 +71,7 @@ h1 { font-family: Georgia, "Times New Roman", serif; letter-spacing: .5px; }
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   /* ——— existing Tailwind + your styles remain ——— */
 
 /* Keep desktop layout exactly like you had */
@@ -599,5 +599,548 @@ body { background: var(--bg); color: var(--fg); }
 @media (min-width: 992px){
     .hero-grid{ grid-template-columns: 1.1fr .9fr; align-items: start; }
     .hero-side{ align-self: start; }
+}
+
+/* Header layout */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.header-edge {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px max(20px, env(safe-area-inset-right)) 14px max(20px, env(safe-area-inset-left));
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust spacing between links */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #f7f7f7;
+  color: var(--brand-green);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #2f4f4f;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-outline {
+  border-color: #111;
+  color: #111;
+  background: #fff;
+}
+
+.btn-outline:hover {
+  background: #f7f7f7;
+}
+
+.btn-green {
+  background: var(--brand-green);
+  color: #fff;
+  border-color: var(--brand-green);
+}
+
+.btn-green:hover {
+  filter: brightness(0.96);
+}
+
+/* Clean professional header */
+.brand {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-slate);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brand:hover {
+  color: var(--brand-green);
+}
+
+/* Navigation spacing */
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--fg);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background-color: rgba(30, 125, 75, 0.08);
+  color: var(--brand-green);
+}
+
+/* Visual divider */
+.nav-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--line);
+  margin: 0 4px;
+}
+
+/* Compact buttons */
+.btn {
+  font-size: 14px;
+  padding: 9px 16px;
+  white-space: nowrap;
+}
+
+/* Theme toggle dropdown */
+.theme-toggle-wrapper {
+  position: relative;
+}
+
+.theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: #f7f7f7;
+  border-color: var(--brand-green);
+}
+
+.theme-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.theme-dropdown button {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg);
+  transition: background 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-dropdown button:hover {
+  background: #f7f7f7;
+}
+
+.theme-dropdown button.active {
+  background: rgba(30, 125, 75, 0.1);
+  color: var(--brand-green);
+  font-weight: 600;
+}
+
+/* Responsive: hide some nav items on smaller screens */
+@media (max-width: 1200px) {
+  .nav-link:nth-child(1),
+  .nav-link:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .topbar-actions .btn-outline {
+    display: none;
+  }
+  .nav-link {
+    display: none;
+  }
+  .nav-divider {
+    display: none;
+  }
+}
+
+/* Contact Page Styles */
+
+.contact-wrapper {
+  background: #f3f5f4;
+  min-height: calc(100vh - 200px);
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 16px;
+}
+
+.contact-title {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 32px);
+  margin: 6px 0 22px;
+  color: #24423d;
+}
+
+/* Two-column layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Form Card */
+.contact-form-card {
+  background: #fff;
+  border: 1px solid #d8e0dd;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 24px;
+}
+
+.contact-form-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 0 20px;
+  color: #24423d;
+}
+
+/* Form Elements */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #6b7a75;
+}
+
+.form-label.required::after {
+  content: '*';
+  color: #b3002d;
+  margin-left: 4px;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 12px 14px;
+  background: #f9fafb;
+  border: 1px solid #d3ddd9;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  background: #fff;
+  border-color: #1E7D4B;
+  box-shadow: 0 0 0 3px rgba(30, 125, 75, 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-select {
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Two-column form grid */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Submit button */
+.form-submit {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Form messages */
+.form-message {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-message.success {
+  background: #d1f4e0;
+  color: #0f8a5f;
+  border: 1px solid #0f8a5f;
+}
+
+.form-message.error {
+  background: #fde8ec;
+  color: #b3002d;
+  border: 1px solid #b3002d;
+}
+
+.form-disclaimer {
+  margin-top: 12px;
+  font-size: 11px;
+  color: #8a988f;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Sidebar Stack */
+.contact-sidebar {
+  display: grid;
+  gap: 20px;
+}
+
+/* Info Cards */
+.info-card {
+  background: #fff;
+  border: 1px solid #d8e0dd;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+}
+
+.info-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 14px;
+  color: #24423d;
+}
+
+/* Urgent callout */
+.urgent-callout {
+  background: #fff9e6;
+  border: 1px solid #f5c518;
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 16px;
+}
+
+.urgent-callout-title {
+  font-weight: 700;
+  color: #24423d;
+  margin-bottom: 8px;
+}
+
+.urgent-callout ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+  color: #2f4f4f;
+}
+
+.urgent-callout li {
+  margin: 4px 0;
+  line-height: 1.5;
+}
+
+/* Contact info blocks */
+.contact-info-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-info-block {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.contact-info-label {
+  font-weight: 700;
+  font-size: 15px;
+  color: #24423d;
+  margin-bottom: 8px;
+}
+
+.contact-info-details {
+  font-size: 14px;
+  color: #2f4f4f;
+  line-height: 1.6;
+}
+
+.contact-info-details a {
+  color: #1E7D4B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-info-note {
+  color: #6b7a75;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* Issue Report Form */
+.issue-form {
+  display: grid;
+  gap: 14px;
+}
+
+.issue-hint {
+  font-size: 12px;
+  color: #6b7a75;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* Footer help text */
+.contact-footer-help {
+  text-align: center;
+  margin-top: 16px;
+  color: #51615b;
+}
+
+.contact-footer-help p {
+  margin: 8px 0;
+}
+
+.contact-footer-help-title {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.contact-footer-help-text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-footer-help a {
+  color: #24423d;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-footer-help a:hover {
+  text-decoration: underline;
+  color: #1E7D4B;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .contact-container {
+    padding: 24px 16px;
+  }
+
+  .contact-form-card,
+  .info-card {
+    padding: 18px;
+  }
+
+  .contact-title {
+    margin-bottom: 20px;
+  }
+}
+
+/* Hero layout */
+.hero-grid {
+  display: grid;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.hero-image {
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+  border-radius: 16px;
+  overflow: hidden;
 }
 
