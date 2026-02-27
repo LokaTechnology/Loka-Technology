@@ -45,6 +45,15 @@ export default function Header() {
 
       <div className={`mobile-panel ${menuOpen ? "open" : ""}`}>
         <div className="mobile-panel-inner">
+
+          {/* Theme toggle at the top so its dropdown always has room */}
+          <div className="mobile-theme-row">
+            <span className="mobile-theme-label">Theme</span>
+            <ThemeToggle />
+          </div>
+
+          <div className="mobile-divider" />
+
           <div className="mobile-links">
             <Link href="/" onClick={() => setMenuOpen(false)}>Home</Link>
             <Link href="/product" onClick={() => setMenuOpen(false)}>Product</Link>
@@ -60,7 +69,6 @@ export default function Header() {
             <Link href="/login" className="btn btn-outline" onClick={() => setMenuOpen(false)}>Sign in</Link>
             <Link href="/register" className="btn btn-primary" onClick={() => setMenuOpen(false)}>Create account</Link>
             <Link href="/pricing" className="btn btn-primary" onClick={() => setMenuOpen(false)}>Request a Pilot</Link>
-            <ThemeToggle />
           </div>
         </div>
       </div>
