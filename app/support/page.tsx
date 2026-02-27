@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata = {
     title: "Support | Loka Technology",
-    description: "Get help with Loka lockers, billing, maintenance, and supplier information.",
+    description: "Get help with Loka lockers, account access, maintenance, and supplier information.",
 };
 
 export default function SupportPage() {
@@ -51,12 +51,12 @@ export default function SupportPage() {
                             <input
                                 id="support-search"
                                 className="form-input input-with-icon-control"
-                                placeholder="Type a question: refunds, access code not working, plan changes…"
+                                placeholder="Type a question: access code not working, plan changes, locker issue…"
                                 aria-label="Search support articles"
                             />
                         </div>
                         <p className="hint" style={{ marginTop: 8 }}>
-                            Tip: Try “hourly plan refund” or “locker won’t open”.
+                            Tip: Try “plan change” or “locker won’t open”.
                         </p>
                     </div>
                 </div>
@@ -104,12 +104,12 @@ export default function SupportPage() {
                                     <Link href="#contact" className="cta-muted">Get help</Link>
                                 </div>
                                 <div className="summary-row">
-                                    <div><strong>Wrong plan or size</strong><div className="subtle">Swap plans (hourly ↔ monthly/semester) before your next billing cycle</div></div>
+                                    <div><strong>Wrong plan or size</strong><div className="subtle">Swap plans based on availability and campus policy</div></div>
                                     <Link href="/account" className="cta-muted">Manage</Link>
                                 </div>
                                 <div className="summary-row">
-                                    <div><strong>Payment failed</strong><div className="subtle">Update your card, then retry checkout</div></div>
-                                    <Link href="/account/settings" className="cta-muted">Billing</Link>
+                                    <div><strong>Checkout issue</strong><div className="subtle">Retry booking and contact support if the issue continues</div></div>
+                                    <Link href="#contact" className="cta-muted">Contact</Link>
                                 </div>
                             </div>
                         </div>
@@ -134,13 +134,13 @@ export default function SupportPage() {
                                 <details className="faq-item">
                                     <summary className="faq-q">What’s covered under hardware support?</summary>
                                     <div className="faq-a open">
-                                        <p>Manufacturer defects and normal wear items are supported. Physical damage or vandalism may incur repair fees. Start with Loka Support; we’ll coordinate hardware service with our supplier.</p>
+                                        <p>Manufacturer defects and normal wear items are supported. Start with Loka Support and we’ll coordinate hardware service with our supplier.</p>
                                     </div>
                                 </details>
                                 <details className="faq-item">
-                                    <summary className="faq-q">How do refunds work?</summary>
+                                    <summary className="faq-q">How do policy exceptions work?</summary>
                                     <div className="faq-a open">
-                                        <p>Hourly payments are refundable before usage begins. Monthly/semester plans follow campus policy and billing cut-off dates. Contact us with your booking ID.</p>
+                                        <p>Exceptions are handled according to campus policy. Contact support with your booking ID and issue details.</p>
                                     </div>
                                 </details>
                             </div>

@@ -23,7 +23,7 @@ export default function ClimateControlledPage() {
                         <li>Temperature sensor every bay</li>
                         <li>Redundant HVAC with filter alerts</li>
                         <li>Insulated steel panels, low-E glass</li>
-                        <li>Same price as standard lockers</li>
+                        <li>Integrated with the same core service model as standard lockers</li>
                     </ul>
                 </div>
 

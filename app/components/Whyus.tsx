@@ -36,7 +36,7 @@ const items: Array<{
   {
     title: "24/7 Access",
     body:
-      "Our lockers work on your schedule—before class, after practice, or 2 AM study runs. Tap your Sun Card or scan a code for instant, contactless access.",
+      "Students get secure, always-available access, backed by 24/7 operational monitoring and rapid support response across campus locations.",
     image: Loka1,
     alt: "Phone opening a smart locker at night",
     href: "/access",
@@ -44,7 +44,7 @@ const items: Array<{
   {
     title: "Climate-Controlled Units",
     body:
-      "Keep laptops, lab kits, meds, and packages safe from Arizona heat. Monitored lockers maintain a stable temperature.",
+      "Climate-controlled lockers are supported by preventive maintenance, health checks, and diagnostics to maintain reliable performance over time.",
     image: Loka2,
     alt: "Green climate-controlled locker bank with display",
     href: "/climate-controlled",
@@ -52,23 +52,23 @@ const items: Array<{
   {
     title: "Flexible Rental Options",
     body:
-      "Pay only for what you need: hourly, daily, or monthly. Reserve online or at the kiosk, extend with a tap, cancel anytime—no hidden fees.",
+      "Flexible deployment and access policies are configured to campus needs, including authentication options and operational workflows.",
     image: Loka3,
     alt: "Student reserving a locker at a kiosk",
     href: "/pricing",
   },
   {
-    title: "Student‑Friendly Prices",
+    title: "Campus‑Friendly Service",
     body:
-      "Affordable storage without compromise. Transparent pricing and bundle discounts for student orgs and teams.",
+      "Real-time analytics and reporting provide visibility into usage patterns, helping institutions optimize placement and guide expansion planning.",
     image: Loka4,
-    alt: "Best price ribbon over green background",
+    alt: "Campus locker service highlight",
     href: "/pricing",
   },
   {
     title: "Real People, Real Help",
     body:
-      "Campus-based support 7 days a week: in‑app chat, quick phone response, and on‑site techs during peak move‑in/out.",
+      "Dedicated support teams coordinate issue response, field service, and operational continuity for students, staff, and administrators.",
     image: Loka6,
     alt: "Tech assisting a student at a locker bank",
     href: "/contact",
@@ -76,7 +76,7 @@ const items: Array<{
   {
     title: "Convenient Locations",
     body:
-      "Placed where students already are—near residence halls, dining, libraries, and transit. Brightly lit, ADA‑accessible bays.",
+      "Data-informed location planning helps deploy lockers where demand is highest, with ADA-accessible bays integrated into campus infrastructure.",
     image: Location,
     alt: "Map pins showing on-campus locker spots",
     href: "/locations",
