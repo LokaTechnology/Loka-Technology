@@ -723,6 +723,32 @@ body { background: var(--bg); color: var(--fg); }
   margin: 0 4px;
 }
 
+.header-edge .hamburger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .header-edge .topbar-actions {
+    display: none;
+  }
+
+  .header-edge .hamburger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .menu-backdrop,
+  .mobile-panel {
+    display: none !important;
+  }
+}
+
 /* Compact buttons */
 .btn {
   font-size: 14px;

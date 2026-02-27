@@ -173,7 +173,7 @@ export default function Home() {
             <section style={{ maxWidth: 1140, margin: "0 auto", padding: "20px 20px" }}>
                 <div>
                     <h3>What is the minimum rental period for a unit?</h3>
-                    <p>The minimum rental is 1 hour, billed in 1-hour increments.</p>
+                    <p>There is no minimum rental period. Users can store items for as long as needed, but usage under one hour is billed as one full hour.</p>
                 </div>
             </section>
 
@@ -184,7 +184,7 @@ export default function Home() {
             <section style={{ maxWidth: 1140, margin: "0 auto", padding: "20px 20px" }}>
                 <div>
                     <h3>Do you offer any discounts for long-term rentals?</h3>
-                    <p>Yes. We offer discounts for rentals of six months or longer. Contact our office for details.</p>
+                    <p>Our ideal contract term is long-term (5+ years), but we’re open to other options based on campus needs.</p>
                 </div>
             </section>
 

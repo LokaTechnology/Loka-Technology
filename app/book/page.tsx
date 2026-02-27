@@ -1,14 +1,9 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 
 type Plan = "hourly" | "monthly" | "semester";
 type Size = "small" | "medium" | "large";
-
-type PriceMap = {
-    monthly?: Record<Size, { cents: number; currency: string; interval: string }>;
-    semester?: Record<Size, { cents: number; currency: string; interval: string }>;
-};
 
 const SIZE_LABEL: Record<Size, string> = {
     small:  "Small • 12” × 15” × 18”",
@@ -22,30 +17,6 @@ export default function Book() {
     const [email, setEmail] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError]     = useState<string | null>(null);
-
-    // Stripe subscription prices (fetched from server, so UI always matches backend)
-    const [prices, setPrices] = useState<PriceMap>({});
-
-    useEffect(() => {
-        let mounted = true;
-        fetch("/api/prices")
-            .then(r => r.json())
-            .then(d => mounted && setPrices(d))
-            .catch(() => {});
-        return () => { mounted = false; };
-    }, []);
-
-    const monthlyTotal = useMemo(() => {
-        if (plan !== "monthly") return null;
-        const cents = prices.monthly?.[size]?.cents;
-        return typeof cents === "number" ? (cents / 100).toFixed(2) : null;
-    }, [plan, size, prices]);
-
-    const semesterTotal = useMemo(() => {
-        if (plan !== "semester") return null;
-        const cents = prices.semester?.[size]?.cents;
-        return typeof cents === "number" ? (cents / 100).toFixed(2) : null;
-    }, [plan, size, prices]);
 
     async function checkout() {
         setError(null);
@@ -133,11 +104,7 @@ export default function Book() {
                             <button onClick={checkout} disabled={loading} className="btn btn-primary">
                                 {loading ? "Creating checkout…" : "Continue to Booking"}
                             </button>
-                            {plan === "hourly" ? (
-                                <span className="hint">Billed at <strong>$4/hr</strong>. Time is metered automatically.</span>
-                            ) : (
-                                <span className="hint">You’ll be redirected to Stripe Checkout.</span>
-                            )}
+                            <span className="hint">You’ll be redirected to Stripe Checkout.</span>
                         </div>
 
                         {error && <p className="error">{error}</p>}
@@ -145,7 +112,7 @@ export default function Book() {
 
                     {/* ---------- RIGHT: Summary ---------- */}
                     <aside className="card" style={{ display:"grid", gap:12 }}>
-                        <h3 style={{ margin:0 }}>Estimated total</h3>
+                        <h3 style={{ margin:0 }}>Booking summary</h3>
 
                         <div className="summary-row">
                             <span>Plan</span>
@@ -156,25 +123,10 @@ export default function Book() {
                             <strong className="value">{size[0].toUpperCase() + size.slice(1)}</strong>
                         </div>
 
-                        {/* Totals */}
-                        {plan === "hourly" && (
-                            <div className="summary-total">
-                                <span>Rate</span>
-                                <strong className="value">$4.00 / hr (metered)</strong>
-                            </div>
-                        )}
-                        {plan === "monthly" && (
-                            <div className="summary-total">
-                                <span>First month</span>
-                                <strong className="value">{monthlyTotal ? `$${monthlyTotal}/mo` : "—"}</strong>
-                            </div>
-                        )}
-                        {plan === "semester" && (
-                            <div className="summary-total">
-                                <span>First charge</span>
-                                <strong className="value">{semesterTotal ? `$${semesterTotal} / semester` : "—"}</strong>
-                            </div>
-                        )}
+                        <div className="summary-total">
+                            <span>Service model</span>
+                            <strong className="value">Core Services</strong>
+                        </div>
 
                         <hr />
                         <ul className="feature-list">
@@ -183,20 +135,14 @@ export default function Book() {
                             <li>Cancel anytime (Monthly/Semester)</li>
                             <li>Receipt emailed to you</li>
                         </ul>
-
-                        {plan === "hourly" && (
-                            <p className="hint" style={{ marginTop: 8 }}>
-                                Late policy: $10 fee after 24 hours; items moved to Lost &amp; Found.
-                            </p>
-                        )}
                     </aside>
                 </div>
 
                 {/* Notes */}
                 <div className="card text-muted" style={{ marginTop:16 }}>
-                    <p><strong>Hourly:</strong> Charged at $4/hr via metered billing. No hour selector—your time is tracked automatically.</p>
-                    <p><strong>Monthly:</strong> Recurring each month (amount shown above is the first month’s charge).</p>
-                    <p><strong>Semester:</strong> One payment per term (amount shown above is the first charge).</p>
+                    <p><strong>Hourly:</strong> Flexible short-term access with time tracked automatically.</p>
+                    <p><strong>Monthly:</strong> Recurring access model for regular usage patterns.</p>
+                    <p><strong>Semester:</strong> Term-based access option aligned with campus operations.</p>
                 </div>
             </div>
         </section>
