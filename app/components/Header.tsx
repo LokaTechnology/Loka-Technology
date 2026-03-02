@@ -49,7 +49,7 @@ export default function Header() {
           {/* Theme toggle at the top so its dropdown always has room */}
           <div className="mobile-theme-row">
             <span className="mobile-theme-label">Theme</span>
-            <ThemeToggle />
+            <ThemeToggle variant="inline" />
           </div>
 
           <div className="mobile-divider" />

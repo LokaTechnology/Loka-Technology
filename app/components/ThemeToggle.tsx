@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 type Theme = "light" | "dark" | "contrast";
 
-export default function ThemeToggle() {
+export default function ThemeToggle({ variant }: { variant?: "inline" } = {}) {
   const [theme, setTheme] = useState<Theme>("light");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,6 +26,24 @@ export default function ThemeToggle() {
     dark: "🌙",
     contrast: "◐"
   };
+
+  /* Inline variant — three visible buttons, no dropdown (safe inside overflow containers) */
+  if (variant === "inline") {
+    return (
+      <div className="theme-inline-group">
+        {(["light", "dark", "contrast"] as Theme[]).map((t) => (
+          <button
+            key={t}
+            onClick={() => apply(t)}
+            className={`theme-inline-btn${theme === t ? " active" : ""}`}
+            aria-label={t + " theme"}
+          >
+            {themeIcons[t]}
+          </button>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="theme-toggle-wrapper">
