@@ -16,14 +16,14 @@ export default function SupportPage() {
                     <h1>We’re here to help</h1>
                     <p className="text-muted" style={{ maxWidth: 760 }}>
                         Find answers fast, contact our team, or review details about our manufacturing partner.
-                        If you’re on campus and need immediate assistance for a locker, call the number below.
+                        If you need immediate assistance, call the number below.
                     </p>
 
                     {/* Quick actions */}
                     <div className="tile-row" style={{ marginTop: 14 }}>
-                        <Link href="/book" className="tile" aria-label="Book a locker">
-                            <span className="tile-icon">🔒</span>
-                            <span className="tile-title">Book a Locker</span>
+                        <Link href="/contact" className="tile" aria-label="Contact us">
+                            <span className="tile-icon">✉️</span>
+                            <span className="tile-title">Contact Us</span>
                         </Link>
                         <Link href="/account" className="tile" aria-label="Manage your account">
                             <span className="tile-icon">👤</span>

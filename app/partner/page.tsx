@@ -27,7 +27,7 @@ export default function PartnerPage() {
             <ul className="feature-list mt-2">
               <li><strong>Expand your footprint:</strong> libraries, rec centers, labs, athletics, residence life.</li>
               <li><strong>New revenue streams:</strong> hourly/daily/semester plans, revenue share or margin options.</li>
-              <li><strong>Modern stack:</strong> Stripe checkout, role based access, full audit logs, webhooks.</li>
+              <li><strong>Modern stack:</strong> Role based access, full audit logs, webhooks, and REST API.</li>
               <li><strong>Sales enablement:</strong> co branded assets, pilots, lead support, case studies.</li>
               <li><strong>Training & SLAs:</strong> install playbooks, admin training, defined response windows.</li>
             </ul>
@@ -75,7 +75,7 @@ export default function PartnerPage() {
           <h3 className="m-0">Common integrations</h3>
           <div className="grid md:grid-cols-3 gap-6 mt-3">
             <Bucket title="Identity & Access" items={["SSO (SAML/OIDC)", "Campus ID / NFC / HID", "Role-based admin"]}/>
-            <Bucket title="Payments & Billing" items={["Stripe (cards, wallets)", "Subscriptions / invoices", "Refunds & receipts"]}/>
+            <Bucket title="Billing & Plans" items={["Revenue share models", "Subscriptions / invoices", "Usage exports"]}/>  
             <Bucket title="Ops & Data" items={["Webhooks & REST API", "Ticketing (Zendesk/Jira)", "Usage & revenue exports"]}/>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function PartnerPage() {
                 <li>Pilot (60–90 days)</li>
               </ul>
               <div style={{ display: "flex", gap: 10, marginTop: 8 }}>
-                <Link href="/payment" className="btn btn-outline">See Pricing Models</Link>
+                <Link href="/pricing" className="btn btn-outline">See Pricing Models</Link>
                 <Link href="/support" className="btn btn-primary" style={{ background: BRAND.slate }}>Support Center</Link>
               </div>
             </div>
@@ -258,7 +258,7 @@ function PartnerLeadForm() {
         <button className="btn btn-primary" disabled={status === "sending"} style={{ background: BRAND.slate }}>
           {status === "sending" ? "Sending…" : "Apply Now"}
         </button>
-        <Link href="/payment" className="cta-muted">View Pricing</Link>
+        <Link href="/pricing" className="cta-muted">View Pricing</Link>
       </div>
     </form>
   );
