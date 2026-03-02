@@ -5,7 +5,7 @@ import { useState } from "react";
 type SendState = "idle" | "sending" | "ok" | "error";
 
 const LOKA_PHONE = "619-616-6828";
-const LOKA_EMAIL = "aj3brac@gmail.com";
+const LOKA_EMAIL = "andre@lokatechnology.com";
 const STATUS_URL = process.env.NEXT_PUBLIC_STATUS_URL || "/always-on";
 
 export default function ContactPage() {

@@ -140,9 +140,9 @@ export default function Book() {
 
                 {/* Notes */}
                 <div className="card text-muted" style={{ marginTop:16 }}>
-                    <p><strong>Hourly:</strong> Flexible short-term access with time tracked automatically.</p>
+                    <p><strong>Hourly:</strong> Flexible short term access with time tracked automatically.</p>
                     <p><strong>Monthly:</strong> Recurring access model for regular usage patterns.</p>
-                    <p><strong>Semester:</strong> Term-based access option aligned with campus operations.</p>
+                    <p><strong>Semester:</strong> Term based access option aligned with campus operations.</p>
                 </div>
             </div>
         </section>

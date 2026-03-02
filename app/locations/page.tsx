@@ -5,7 +5,7 @@ import LocationsExplorer, { LocationSpot } from "app/components/LocationsExplore
 export const metadata: Metadata = {
     title: "Convenient Locations | Loka Technology",
     description:
-        "Placed where students already are—near residence halls, libraries, and transit. Brightly lit, ADA-accessible bays.",
+        "Placed where students already are — near residence halls, libraries, and transit. Brightly lit, ADA accessible bays.",
 };
 
 const LOCATIONS: LocationSpot[] = [

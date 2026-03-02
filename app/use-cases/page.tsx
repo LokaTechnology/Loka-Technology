@@ -6,7 +6,7 @@ export default function UseCasesPage() {
         <h1>Campus Use Cases</h1>
         <p className="text-muted max-w-2xl">
           Loka smart lockers support a range of campus environments by providing
-          secure, self-service storage that reduces operational overhead while
+          secure, self service storage that reduces operational overhead while
           maintaining institutional security standards.
         </p>
 
@@ -39,8 +39,8 @@ export default function UseCasesPage() {
         <section className="section">
           <h2>Campus Housing</h2>
           <p className="max-w-3xl">
-            Shared-use lockers provide flexible storage for residents, guests,
-            and short-term needs during move-in, move-out, and peak occupancy
+            Shared use lockers provide flexible storage for residents, guests,
+            and short term needs during move in, move out, and peak occupancy
             periods. Access can be managed digitally without issuing or tracking
             physical keys.
           </p>
@@ -51,7 +51,7 @@ export default function UseCasesPage() {
           <h2>Recreation Centers</h2>
           <p className="max-w-3xl">
             Recreation facilities benefit from fast, keyless locker access that
-            reduces front-desk congestion during peak hours. Secure self-service
+            reduces front desk congestion during peak hours. Secure self service
             storage improves user throughput while maintaining oversight and
             accountability.
           </p>

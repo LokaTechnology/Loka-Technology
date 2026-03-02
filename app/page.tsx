@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Shield, Settings, HeadphonesIcon, BarChart3 } from "lucide-react";
 
 import Carousel from "./components/Carousel";
 import WhyUs from "./components/Whyus";
@@ -27,10 +28,10 @@ export default function Home() {
                 </h3>
 
                 <p className="text-muted max-w-2xl">
-                  University campuses are facing growing demands for secure, always-available
+                  University campuses are facing growing demands for secure, always available
                   storage and asset control. Loka delivers a modern smart locker system designed
                   specifically for higher education combining secure access, 24/7 availability,
-                  and real-time monitoring through a centralized management platform. The result
+                  and real time monitoring through a centralized management platform. The result
                   is safer campuses, reduced administrative burden, and greater confidence for
                   students and staff.
                 </p>
@@ -92,30 +93,37 @@ export default function Home() {
                         <h3 style={{ margin: "14px 0 4px", fontWeight: 700, fontSize: 16 }}>
                             What We Do
                         </h3>
-                        <p style={{ color: "#555", margin: "0 0 12px" }}>
+                        <p style={{ color: "#555", margin: "0 0 16px" }}>
                             We <strong>customize, install, and operate</strong> smart-lockers tailored to university life.
                             We offer convenience for students and faculty.
                         </p>
 
-                        <h3 style={{ margin: "14px 0 4px", fontWeight: 700, fontSize: 16 }}>
-                            Made By Students, For Students
-                        </h3>
-                        <p style={{ color: "#555", margin: "0 0 12px" }}>
-                            Built by University Alumni (ASU) and shaped by real campus routines. Students unlock with{" "}
-                            <strong>University ID cards</strong> or <strong>university login via QR code</strong>. The lockers are
-                            protected by <strong>encrypted access, steel construction, CCTV</strong>, and{" "}
-                            <strong>tamper alerts</strong> with privacy in mind. By reducing "where do I stash this?" stress,
-                            students <strong>engage more safely and confidently</strong> in clubs, labs, classes, and campus events.
-                        </p>
+                        {/* Core Services */}
+                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 20 }}>
+                            {[
+                                { icon: <Shield size={18} color="#1E7D4B" />, title: "Campus Strategy & Placement", desc: "Optimal locker placement based on traffic, safety, and accessibility." },
+                                { icon: <Settings size={18} color="#1E7D4B" />, title: "Fully Managed Operations", desc: "We handle logistics, maintenance, and vendor coordination end-to-end." },
+                                { icon: <HeadphonesIcon size={18} color="#1E7D4B" />, title: "Student Support (24/7)", desc: "Round-the-clock help for access issues, lockouts, and technical problems." },
+                                { icon: <BarChart3 size={18} color="#1E7D4B" />, title: "Data & Reporting", desc: "Usage insights, peak-time analytics, and expansion recommendations." },
+                            ].map((s) => (
+                                <div key={s.title} style={{ display: "flex", gap: 10, padding: "12px", borderRadius: 10, border: "1px solid #e5e7eb", background: "#f9fafb" }}>
+                                    <div style={{ flexShrink: 0, marginTop: 2 }}>{s.icon}</div>
+                                    <div>
+                                        <p style={{ margin: 0, fontWeight: 700, fontSize: 13, color: "#2F4F4F" }}>{s.title}</p>
+                                        <p style={{ margin: 0, fontSize: 12, color: "#555", lineHeight: 1.5 }}>{s.desc}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
 
                         <h3 style={{ margin: "14px 0 4px", fontWeight: 700, fontSize: 16 }}>
                             Sustainability
                         </h3>
                         <p style={{ color: "#555", margin: 0 }}>
-                            Our lockers use durable, recyclable metals with <strong>low-VOC, powder-coat finishes</strong> and{" "}
-                            <strong>modular, repairable parts</strong>. <strong>Energy-efficient controllers</strong> and sleep modes
-                            reduce power draw; consolidated hand-offs (bookstore/IT, after-hours pickup) help cut repeat delivery
-                            trips. At end-of-life we support responsible recycling and parts recovery with clear documentation for
+                            Our lockers use durable, recyclable metals with <strong>low VOC, powder coat finishes</strong> and{" "}
+                            <strong>modular, repairable parts</strong>. <strong>Energy efficient controllers</strong> and sleep modes
+                            reduce power draw; consolidated handoffs (bookstore/IT, after hours pickup) help cut repeat delivery
+                            trips. At end of life we support responsible recycling and parts recovery with clear documentation for
                             facilities teams.
                         </p>
                     </div>
@@ -162,8 +170,8 @@ export default function Home() {
                     <h1>FREQUENTLY ASKED QUESTIONS</h1>
                     <p>
                         Please reach us at{" "}
-                        <a href="mailto:aj3brac@gmail.com" className="underlinedText">
-                            aj3brac@gmail.com
+                        <a href="mailto:andre@lokatechnology.com" className="underlinedText">
+                            andre@lokatechnology.com
                         </a>{" "}
                         if you cannot find an answer to your question.
                     </p>
@@ -183,8 +191,8 @@ export default function Home() {
 
             <section style={{ maxWidth: 1140, margin: "0 auto", padding: "20px 20px" }}>
                 <div>
-                    <h3>Do you offer any discounts for long-term rentals?</h3>
-                    <p>Our ideal contract term is long-term (5+ years), but we’re open to other options based on campus needs.</p>
+                <h3>Do you offer any discounts for long term rentals?</h3>
+                    <p>Our ideal contract term is long term (5+ years), but we're open to other options based on campus needs.</p>
                 </div>
             </section>
 

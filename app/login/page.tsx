@@ -39,7 +39,7 @@ export default function LoginPage() {
       <div className="container" style={{ maxWidth: 520 }}>
         <header style={{ marginBottom: 24, textAlign: "center" }}>
           <h1 style={{ margin: "0 0 8px" }}>Welcome Back</h1>
-          <p className="subtle">Sign in to access your bookings and manage your plans.</p>
+          <p className="subtle">Sign in to access your partner dashboard, deployment resources, and campus collaboration tools.</p>
         </header>
 
         <form onSubmit={onSubmit} className="card form-card" style={{ display: "grid", gap: 14 }}>
@@ -161,7 +161,7 @@ export default function LoginPage() {
             Create account
           </Link>
           <p className="tiny-note" style={{ marginTop: 12 }}>
-            Join to manage bookings, view history, and get priority support.
+            Register to explore pilot deployment opportunities and access partnership resources.
           </p>
         </div>
 

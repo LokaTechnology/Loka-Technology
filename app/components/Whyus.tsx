@@ -36,7 +36,7 @@ const items: Array<{
   {
     title: "24/7 Access",
     body:
-      "Students get secure, always-available access, backed by 24/7 operational monitoring and rapid support response across campus locations.",
+      "Students get secure, always available access, backed by 24/7 operational monitoring and rapid support response across campus locations.",
     image: Loka1,
     alt: "Phone opening a smart locker at night",
     href: "/access",
@@ -44,7 +44,7 @@ const items: Array<{
   {
     title: "Climate-Controlled Units",
     body:
-      "Climate-controlled lockers are supported by preventive maintenance, health checks, and diagnostics to maintain reliable performance over time.",
+      "Climate controlled lockers are supported by preventive maintenance, health checks, and diagnostics to maintain reliable performance over time.",
     image: Loka2,
     alt: "Green climate-controlled locker bank with display",
     href: "/climate-controlled",
@@ -76,10 +76,18 @@ const items: Array<{
   {
     title: "Convenient Locations",
     body:
-      "Data-informed location planning helps deploy lockers where demand is highest, with ADA-accessible bays integrated into campus infrastructure.",
+      "Data informed location planning helps deploy lockers where demand is highest, with ADA accessible bays integrated into campus infrastructure.",
     image: Location,
     alt: "Map pins showing on-campus locker spots",
     href: "/locations",
+  },
+  {
+    title: "Made By Students, For Students",
+    body:
+      "Built by University Alumni (ASU) and shaped by real campus routines. Students unlock with University ID cards or university login via QR code — with encrypted access, steel construction, CCTV, and tamper alerts keeping privacy a priority.",
+    image: Loka3,
+    alt: "Student using a smart locker on campus",
+    href: "/",
   },
 ];
 

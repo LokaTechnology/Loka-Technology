@@ -6,8 +6,8 @@ type Deployment = "pilot" | "department" | "campus";
 
 const LABEL: Record<Deployment, string> = {
   pilot: "Pilot Deployment",
-  department: "Department-Level",
-  campus: "Campus-Wide",
+  department: "Department Level",
+  campus: "Campus Wide",
 };
 
 export default function PricingLeaner() {
@@ -52,7 +52,7 @@ export default function PricingLeaner() {
 
           {deployment === "department" && (
             <div className="card">
-              <h3>Department-Level Deployment</h3>
+              <h3>Department Level Deployment</h3>
               <p>
                 Targeted rollout for specific facilities such as libraries,
                 recreation centers, or academic buildings with centralized
@@ -63,7 +63,7 @@ export default function PricingLeaner() {
 
           {deployment === "campus" && (
             <div className="card">
-              <h3>Campus-Wide Deployment</h3>
+              <h3>Campus Wide Deployment</h3>
               <p>
                 Scaled implementation across multiple locations with consistent
                 access control, reporting, and support infrastructure.

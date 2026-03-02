@@ -76,7 +76,7 @@ export default function SupportPage() {
                                 Together, we focus on durability, safety, and a great experience for students and staff.
                             </p>
                             <ul className="feature-list">
-                                <li>Commercial-grade steel construction and modular layouts</li>
+                                <li>Commercial grade steel construction and modular layouts</li>
                                 <li>Multiple door sizes to support small, medium, and large storage</li>
                                 <li>Clean installation profile for campus environments</li>
                                 <li>Compatible with our smart controller and software</li>
@@ -163,7 +163,7 @@ export default function SupportPage() {
                             <div className="contact-block">
                                 <span>✉️</span>
                                 <div>
-                                    <a className="underlinedText" href="mailto:support@lokatechnology.com">support@lokatechnology.com</a>
+                                    <a className="underlinedText" href="mailto:andre@lokatechnology.com">andre@lokatechnology.com</a>
                                     <div className="subtle">We reply within one business day</div>
                                 </div>
                             </div>

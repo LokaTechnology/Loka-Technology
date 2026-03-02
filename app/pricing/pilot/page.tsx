@@ -7,10 +7,10 @@ export default function PilotProgramPage() {
     <main className="section">
       <div className="container">
 
-        <h1>Semester-Based Pilot Program</h1>
+        <h1>Semester Based Pilot Program</h1>
         <p className="text-muted max-w-2xl">
           A structured, data-driven pilot allowing universities to evaluate
-          performance before committing to long-term deployment.
+          performance before committing to long term deployment.
         </p>
 
         <hr />
@@ -20,7 +20,7 @@ export default function PilotProgramPage() {
           <h2>Pilot Structure</h2>
           <ul className="feature-list">
             <li>Limited installation at approved campus location(s)</li>
-            <li>Semester-length evaluation period</li>
+            <li>Semester length evaluation period</li>
             <li>Full dashboard access and reporting</li>
             <li>Operational and technical support included</li>
           </ul>
@@ -38,7 +38,7 @@ export default function PilotProgramPage() {
 
             <div className="card">
               <h3>Operational Impact</h3>
-              <p>Reduction in staffing burden and front-desk congestion.</p>
+              <p>Reduction in staffing burden and front desk congestion.</p>
             </div>
 
             <div className="card">
@@ -55,7 +55,7 @@ export default function PilotProgramPage() {
 
         {/* No long term commitment */}
         <section className="section max-w-3xl">
-          <h2>No Long-Term Commitment Upfront</h2>
+          <h2>No Long Term Commitment Upfront</h2>
           <p>
             At the end of the semester, the university receives a formal
             performance report supporting a data-backed go/no-go decision.

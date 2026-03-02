@@ -41,10 +41,10 @@ export default function RegisterPage() {
       <div className="container auth-wrap">
         {/* Heading */}
         <header className="auth-head">
-          <span className="kicker">Welcome to Loka</span>
-          <h1>Create your account</h1>
+          <span className="kicker">Partnership Portal</span>
+          <h1>Create a Partner Account</h1>
           <p className="subtle" style={{ marginTop: 4 }}>
-            A single sign-in for booking lockers and managing your plans.
+            Register to explore pilot deployment opportunities, access partnership resources, and collaborate with Loka on campus storage initiatives. Partner accounts are intended for university administrators, facilities teams, student unions, and approved collaborators.
           </p>
         </header>
 
@@ -81,7 +81,7 @@ export default function RegisterPage() {
                   required
                 />
               </div>
-              <p className="hint">We’ll send your receipt and booking confirmations here.</p>
+              <p className="hint">We'll use this to send partnership updates and deployment resources.</p>
             </label>
 
             {/* Password */}
@@ -144,14 +144,16 @@ export default function RegisterPage() {
             </p>
           </form>
 
-          {/* Side card (benefits) */}
+          {/* Side card (partner benefits) */}
           <aside className="card benefits-card">
-            <h3 style={{ marginTop: 0 }}>Why join?</h3>
+            <h3 style={{ marginTop: 0 }}>Partner Access Includes</h3>
             <ul className="feature-list">
-              <li>Fast checkout and receipts</li>
-              <li>Manage monthly/semester plans</li>
-              <li>View past hourly bookings</li>
-              <li>Priority support</li>
+              <li>Pilot deployment planning tools</li>
+              <li>Campus specific pricing &amp; proposals</li>
+              <li>Partnership resources &amp; onboarding materials</li>
+              <li>Direct collaboration with the Loka team</li>
+              <li>Usage analytics &amp; reporting dashboards</li>
+              <li>Dedicated partner support channel</li>
             </ul>
           </aside>
         </div>

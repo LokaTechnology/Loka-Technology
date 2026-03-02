@@ -30,41 +30,41 @@ export default function Solutions() {
         <div className="mx-auto w-full max-w-4xl">
           <SolutionBlock
             title="Advanced Security Measures"
-            body="We take security seriously. Systems include 24/7 camera coverage near locker bays, audit logs for every open/close, role-based access controls for staff, and remote disable. Hardware service is coordinated through American Locker."
+            body="We take security seriously. Systems include 24/7 camera coverage near locker bays, audit logs for every open/close, role based access controls for staff, and remote disable. Hardware service is coordinated through American Locker."
           />
 
           <Divider />
 
           <SolutionBlock
             title="Variety of Unit Sizes"
-            body="From small doors for notebooks and tablets to larger bays for instruments or athletic gear, we fit the use-cases on campus. Layouts can mix sizes within a single bank to maximize utilization."
+            body="From small doors for notebooks and tablets to larger bays for instruments or athletic gear, we fit the use cases on campus. Layouts can mix sizes within a single bank to maximize utilization."
           />
 
           <Divider />
 
           <SolutionBlock
             title="Online Bill Payment"
-            body="Stripe-powered checkout for hourly, monthly, and semester plans. Receipts are automatically emailed, and you can extend or cancel anytime from your account."
+            body="Stripe powered checkout for hourly, monthly, and semester plans. Receipts are automatically emailed, and you can extend or cancel anytime from your account."
           />
 
           <Divider />
 
           <SolutionBlock
             title="Climate-Controlled Options"
-            body="Where heat matters (Arizona ☀️), we offer temperature-monitored bays for devices, meds, or sensitive materials. Alerts are triggered if thresholds are exceeded."
+            body="Where heat matters (Arizona ☀️), we offer temperature monitored bays for devices, meds, or sensitive materials. Alerts are triggered if thresholds are exceeded."
           />
 
           <Divider />
 
           <SolutionBlock
             title="Easy Student Access"
-            body="Unlock with QR code, PIN, or campus ID—no keys to lose. Accessibility and lighting meet campus standards, and locations are ADA-friendly."
+            body="Unlock with QR code, PIN, or campus ID — no keys to lose. Accessibility and lighting meet campus standards, and locations are ADA friendly."
           />
 
           <Divider />
 
           <SolutionBlock
-            title="Turn-Key Install & Support"
+            title="Turnkey Install and Support"
             body="We handle site planning, delivery, install, and training. Ongoing support includes software updates, uptime monitoring, and American Locker field service for hardware."
           />
 

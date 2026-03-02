@@ -13,7 +13,7 @@ export default function PartnerPage() {
         <header className="space-y-2">
           <h1 style={{ color: BRAND.slate }}>Partner With Us</h1>
           <p className="text-muted" style={{ maxWidth: 800 }}>
-            Join the Loka partner network to deliver secure, self-serve smart lockers that reduce theft,
+            Join the Loka partner network to deliver secure, self serve smart lockers that reduce theft,
             streamline operations, and elevate student experience. We power software, monitoring, and analytics;
             you help us bring it to campuses and properties that need it most.
           </p>
@@ -26,9 +26,9 @@ export default function PartnerPage() {
             <h3>Why partner with Loka</h3>
             <ul className="feature-list mt-2">
               <li><strong>Expand your footprint:</strong> libraries, rec centers, labs, athletics, residence life.</li>
-              <li><strong>New revenue streams:</strong> hourly/daily/semester plans, rev-share or margin options.</li>
-              <li><strong>Modern stack:</strong> Stripe checkout, role-based access, full audit logs, webhooks.</li>
-              <li><strong>Sales enablement:</strong> co-branded assets, pilots, lead support, case studies.</li>
+              <li><strong>New revenue streams:</strong> hourly/daily/semester plans, revenue share or margin options.</li>
+              <li><strong>Modern stack:</strong> Stripe checkout, role based access, full audit logs, webhooks.</li>
+              <li><strong>Sales enablement:</strong> co branded assets, pilots, lead support, case studies.</li>
               <li><strong>Training & SLAs:</strong> install playbooks, admin training, defined response windows.</li>
             </ul>
           </div>
@@ -37,7 +37,7 @@ export default function PartnerPage() {
             <h3>Hardware supplier</h3>
             <p className="m-0 text-[15px] text-gray-700">
               Physical lockers supplied by <strong>American Locker</strong>. Loka manages software, monitoring,
-              and first-line support; American Locker provides <em>field service & RMA</em> for hinges, latches,
+              and first line support; American Locker provides <em>field service & RMA</em> for hinges, latches,
               and controllers.
             </p>
             <div style={{ display: "flex", gap: 10, marginTop: 12 }}>
@@ -84,11 +84,11 @@ export default function PartnerPage() {
         <div className="card">
           <h3 className="m-0">Partnership process</h3>
           <ol className="list-decimal list-inside text-gray-700 space-y-1 mt-2">
-            <li><strong>Apply:</strong> share your org, regions, and target use-cases.</li>
-            <li><strong>Fit call:</strong> align on model (rev-share, subscription, or purchase + support).</li>
-            <li><strong>Pilot (60–90 days):</strong> on-site install, success metrics, student feedback.</li>
-            <li><strong>Agreement & enablement:</strong> contracts, training, co-marketing.</li>
-            <li><strong>Launch:</strong> go-live, dashboards, quarterly reviews.</li>
+            <li><strong>Apply:</strong> share your org, regions, and target use cases.</li>
+            <li><strong>Fit call:</strong> align on model (revenue share, subscription, or purchase + support).</li>
+            <li><strong>Pilot (60–90 days):</strong> on site install, success metrics, student feedback.</li>
+            <li><strong>Agreement &amp; enablement:</strong> contracts, training, co marketing.</li>
+            <li><strong>Launch:</strong> go live, dashboards, quarterly reviews.</li>
           </ol>
         </div>
 

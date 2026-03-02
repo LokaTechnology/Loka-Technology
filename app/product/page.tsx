@@ -7,7 +7,7 @@ export default function ProductPage() {
         <h1>Smart Locker Platform & Managed Campus Services</h1>
         <p className="text-muted max-w-2xl">
           Loka provides a fully managed smart locker solution supported by a
-          major enterprise-grade supplier, combining secure hardware,
+          major enterprise grade supplier, combining secure hardware,
           centralized software, and ongoing operational services designed
           specifically for universities.
         </p>
@@ -50,7 +50,7 @@ export default function ProductPage() {
             <div className="card">
               <h3>Expansion Planning</h3>
               <p>
-                Data-informed growth strategies allow universities to scale
+                Data informed growth strategies allow universities to scale
                 deployments across additional buildings and departments as
                 demand increases.
               </p>
@@ -72,7 +72,7 @@ export default function ProductPage() {
         <section className="section">
           <h2>System Overview</h2>
           <p className="max-w-3xl">
-            The Loka platform provides secure, self-service storage while
+            The Loka platform provides secure, self service storage while
             reducing administrative workload. Locker access is managed
             through approved campus authentication methods, and system
             activity is monitored via a centralized administrative dashboard.
@@ -88,7 +88,7 @@ export default function ProductPage() {
             <div className="card">
               <h3>1. Authenticate</h3>
               <p>
-                Users access lockers using institution-approved methods such
+                Users access lockers using institution approved methods such
                 as ID cards, QR codes, or secure login credentials.
               </p>
             </div>
@@ -97,7 +97,7 @@ export default function ProductPage() {
               <h3>2. Store & Retrieve</h3>
               <p>
                 Lockers unlock instantly for authorized users, eliminating
-                manual key distribution or front-desk management.
+                manual key distribution or front desk management.
               </p>
             </div>
 
@@ -105,7 +105,7 @@ export default function ProductPage() {
               <h3>3. Monitor & Manage</h3>
               <p>
                 Administrators review usage metrics, system alerts, and
-                access logs from a web-based management interface.
+                access logs from a web based management interface.
               </p>
             </div>
 
@@ -113,7 +113,7 @@ export default function ProductPage() {
               <h3>4. Maintain & Scale</h3>
               <p>
                 Automated alerts and ongoing service support enable proactive
-                maintenance and campus-wide expansion planning.
+                maintenance and campus wide expansion planning.
               </p>
             </div>
 
@@ -125,7 +125,7 @@ export default function ProductPage() {
           <h2>Institutional Challenges Addressed</h2>
           <ul className="feature-list max-w-3xl">
             <li>Limited or unsecured storage in academic buildings</li>
-            <li>Front-desk congestion and manual locker administration</li>
+            <li>Front desk congestion and manual locker administration</li>
             <li>Lost or stolen personal or institutional property</li>
             <li>Staffing overhead associated with key management</li>
             <li>Inflexible storage systems that do not scale with demand</li>
@@ -137,7 +137,7 @@ export default function ProductPage() {
           <h2>No Risk to the University</h2>
           <p className="text-muted max-w-2xl mx-auto">
             Institutions may evaluate the Loka system through a limited pilot
-            deployment before committing to campus-wide expansion. The pilot
+            deployment before committing to campus wide expansion. The pilot
             allows stakeholders to validate operational impact, user adoption,
             and system reliability using real-world data.
           </p>

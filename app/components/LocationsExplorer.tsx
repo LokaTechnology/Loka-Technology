@@ -281,9 +281,9 @@ export default function LocationsExplorer({ locations }: Props) {
                 <div className="card account-section" style={{ display: "grid", gap: 10 }}>
                     <h3 style={{ margin: 0 }}>Why these spots?</h3>
                     <ul className="feature-list">
-                        <li>Near high-traffic student zones (residence, dining, libraries, transit)</li>
+                        <li>Near high traffic student zones (residence, dining, libraries, transit)</li>
                         <li>Bright lighting and clear sightlines for safety</li>
-                        <li>ADA-accessible bays and reach heights</li>
+                        <li>ADA accessible bays and reach heights</li>
                         <li>Simple directions—one tap to Maps</li>
                     </ul>
                 </div>

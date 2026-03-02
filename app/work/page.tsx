@@ -12,7 +12,7 @@ const steps = [
     number: 2,
     icon: TestTube2,
     title: "Pilot Deployment",
-    description: "Start small with a pilot installation in one high-traffic location to test fit and usage."
+    description: "Start small with a pilot installation in one high traffic location to test fit and usage."
   },
   {
     number: 3,
@@ -30,7 +30,7 @@ const steps = [
     number: 5,
     icon: TrendingUp,
     title: "Scale or Optimize",
-    description: "Use AI-driven insights to expand to new locations or refine existing operations."
+    description: "Use AI driven insights to expand to new locations or refine existing operations."
   }
 ];
 
@@ -42,7 +42,7 @@ export default function HowItWorksPage() {
         <header style={{ textAlign: "center", marginBottom: 56 }}>
           <h1 style={{ margin: "0 0 16px" }}>How It Works</h1>
           <p className="text-muted" style={{ fontSize: 18, maxWidth: 650, margin: "0 auto" }}>
-            From initial assessment to campus-wide deployment, we make the process simple and data-driven.
+            From initial assessment to campus wide deployment, we make the process simple and data driven.
           </p>
         </header>
 

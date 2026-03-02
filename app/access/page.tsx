@@ -31,9 +31,9 @@ export default function AlwaysOnPage() {
                         <h3 style={{ margin: 0 }}>Infrastructure & Hosting</h3>
                         <ul className="feature-list">
                             <li><strong>Reliable hosting</strong> with 99.9%+ uptime targets</li>
-                            <li><strong>Auto-scaling</strong> to handle peak traffic without slowdowns</li>
+                            <li><strong>Auto scaling</strong> to handle peak traffic without slowdowns</li>
                             <li><strong>Redundancy & load balancing</strong>—no single point of failure</li>
-                            <li><strong>Multi-region option</strong> for resilience against regional outages</li>
+                            <li><strong>Multi region option</strong> for resilience against regional outages</li>
                         </ul>
                     </div>
 
@@ -59,9 +59,9 @@ export default function AlwaysOnPage() {
                     <div className="card" style={{ display: "grid", gap: 12 }}>
                         <h3 style={{ margin: 0 }}>Monitoring & Support</h3>
                         <ul className="feature-list">
-                            <li><strong>24/7 uptime monitoring</strong> with real-time alerts</li>
-                            <li><strong>Automated health checks</strong> & self-healing restarts</li>
-                            <li><strong>On-call escalation</strong> for incidents, anytime</li>
+                            <li><strong>24/7 uptime monitoring</strong> with real time alerts</li>
+                            <li><strong>Automated health checks</strong> &amp; self healing restarts</li>
+                            <li><strong>On call escalation</strong> for incidents, anytime</li>
                         </ul>
                         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 6 }}>
                             <a

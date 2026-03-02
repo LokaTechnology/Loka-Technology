@@ -38,12 +38,12 @@ export default function ServicesPage() {
             </div>
             <h3 style={{ margin: "0 0 12px" }}>Campus Strategy & Placement</h3>
             <p className="text-muted" style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 16 }}>
-              We assess high-traffic areas, safety needs, and accessibility requirements to determine 
+              We assess high traffic areas, safety needs, and accessibility requirements to determine 
               optimal locker locations.
             </p>
             <ul className="feature-list" style={{ fontSize: 14, color: "#555" }}>
               <li>Safety and accessibility review</li>
-              <li>Pilot-first deployment approach</li>
+              <li>Pilot first deployment approach</li>
             </ul>
           </div>
 
@@ -88,12 +88,12 @@ export default function ServicesPage() {
             </div>
             <h3 style={{ margin: "0 0 12px" }}>Student Support (24/7)</h3>
             <p className="text-muted" style={{ fontSize: 15, lineHeight: 1.6, marginBottom: 16 }}>
-              Round-the-clock assistance for access issues, lockouts, and technical problems—
+              Round the clock assistance for access issues, lockouts, and technical problems —
               reducing the burden on campus staff.
             </p>
             <ul className="feature-list" style={{ fontSize: 14, color: "#555" }}>
               <li>Access and lockout support</li>
-              <li>After-hours issue handling</li>
+              <li>After hours issue handling</li>
               <li>Reduced staff burden</li>
             </ul>
           </div>

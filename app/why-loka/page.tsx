@@ -33,7 +33,7 @@ export default function WhyLokaPage() {
             <div className="card">
               <h3>Loka Manages Outcomes</h3>
               <ul className="feature-list">
-                <li>End-to-end operational ownership</li>
+                <li>End to end operational ownership</li>
                 <li>Data analytics and reporting</li>
                 <li>24/7 monitoring and support</li>
                 <li>Performance accountability</li>

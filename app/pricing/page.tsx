@@ -27,12 +27,12 @@ export default function PricingPage() {
 
         {/* Pricing philosophy */}
         <section className="max-w-3xl">
-          <h2>Campus-Specific Pricing</h2>
+          <h2>Campus Specific Pricing</h2>
           <p className="subtle">
             Loka pricing is customized for each institution. Costs vary based on
             deployment size, configuration, integrations, and operational
             requirements. This ensures pricing aligns with campus needs rather
-            than one-size-fits-all plans.
+            than standardized plans.
           </p>
         </section>
 
@@ -58,7 +58,7 @@ export default function PricingPage() {
           <p className="text-muted max-w-xl mx-auto">
             Pilot programs allow universities to evaluate operational impact,
             user adoption, and system performance before committing to a
-            campus-wide rollout.
+            campus wide rollout.
           </p>
 
           <div className="flex gap-4 justify-center mt-6 flex-wrap">
