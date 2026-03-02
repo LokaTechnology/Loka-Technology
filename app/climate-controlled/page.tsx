@@ -39,10 +39,10 @@ export default function ClimateControlledPage() {
 
             <section>
                 <Link
-                    href="/book"
+                    href="/contact"
                     className="btn btn-primary"
                 >
-                    Reserve a climate-controlled locker
+                    Request climate-controlled deployment
                 </Link>
             </section>
         </main>

@@ -43,8 +43,8 @@ export default function Solutions() {
           <Divider />
 
           <SolutionBlock
-            title="Online Bill Payment"
-            body="Stripe powered checkout for hourly, monthly, and semester plans. Receipts are automatically emailed, and you can extend or cancel anytime from your account."
+            title="Flexible Access Plans"
+            body="Hourly, monthly, and semester access plans can be configured per deployment. Partners choose the model that fits their campus — revenue share, subscription, or purchase. Receipts and usage reports are automatically generated."
           />
 
           <Divider />

@@ -20,7 +20,7 @@ export default function AlwaysOnPage() {
                         performance, and safety so services stay online day and night.
                     </p>
                     <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-                        <Link href="/book" className="btn btn-primary">Book a Locker</Link>
+                        <Link href="/partner" className="btn btn-primary">Become a Partner</Link>
                         <Link href="/support" className="btn btn-outline">Support Center</Link>
                     </div>
                 </header>
