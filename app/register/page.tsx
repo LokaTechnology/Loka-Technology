@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Eye, EyeOff, Mail, Lock, User } from "lucide-react";
-import {signIn} from "next-auth/react";
+import { Eye, EyeOff, Mail, Lock, User, HardHat } from "lucide-react";
 import { SiGoogle } from "react-icons/si";
 
 
@@ -12,6 +11,7 @@ export default function RegisterPage() {
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [googleMsg, setGoogleMsg] = useState<string | null>(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -128,12 +128,32 @@ export default function RegisterPage() {
               <div className="divider"><span>or</span></div>
 
               {/* Social — only works if Google provider is configured */}
+              {googleMsg && (
+                <div
+                  role="status"
+                  style={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 10,
+                    background: "#fffbea",
+                    border: "1px solid #FFC606",
+                    borderRadius: 10,
+                    padding: "12px 14px",
+                    fontSize: 14,
+                    color: "#5a3e00",
+                  }}
+                >
+                  <HardHat size={18} style={{ flexShrink: 0, marginTop: 1, color: "#b45309" }} />
+                  <span>{googleMsg}</span>
+                </div>
+              )}
+
               <button
                   type="button"
                   className="btn btn-outline"
-                  onClick = {()=>signIn("google", { callbackUrl: "/" })}
+                  onClick={() => setGoogleMsg("Google sign-in is coming soon — we\u2019re still configuring it. Create your account with email & password for now.")}
                   disabled={loading}
-                  aria-label="Sign in with Google"
+                  aria-label="Continue with Google"
               >
                   <SiGoogle size={18} style={{ marginRight: 8 }} />
                   Continue with Google

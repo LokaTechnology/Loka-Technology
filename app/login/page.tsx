@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { Mail, Lock, Eye, EyeOff, LogIn, UserPlus } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, LogIn, UserPlus, HardHat } from "lucide-react";
 import { SiGoogle } from "react-icons/si";
 
 export default function LoginPage() {
@@ -12,6 +13,10 @@ export default function LoginPage() {
   const [err, setErr] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [remember, setRemember] = useState(true);
+  const [googleMsg, setGoogleMsg] = useState<string | null>(null);
+  const searchParams = useSearchParams();
+  const urlError = searchParams.get("error");
+  const oauthError = urlError === "OAuthSignin" || urlError === "OAuthCallback" || urlError === "OAuthCreateAccount" || urlError === "OAuthAccountNotLinked";
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -30,8 +35,7 @@ export default function LoginPage() {
   }
 
   async function signInGoogle() {
-    setLoading(true);
-    await signIn("google", { callbackUrl: "/" });
+    setGoogleMsg("Google sign-in is coming soon — we're still configuring it. Use email & password in the meantime.");
   }
 
   return (
@@ -101,7 +105,32 @@ export default function LoginPage() {
             </Link>
           </div>
 
-          {/* Error */}
+          {/* OAuth coming-soon banner (URL error or button click) */}
+          {(googleMsg || oauthError) && (
+            <div
+              role="status"
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: 10,
+                background: "#fffbea",
+                border: "1px solid #FFC606",
+                borderRadius: 10,
+                padding: "12px 14px",
+                fontSize: 14,
+                color: "#5a3e00",
+                marginTop: 4,
+              }}
+            >
+              <HardHat size={18} style={{ flexShrink: 0, marginTop: 1, color: "#b45309" }} />
+              <span>
+                {googleMsg ||
+                  "Google sign-in is not yet available — we're still configuring it. Please use email & password for now."}
+              </span>
+            </div>
+          )}
+
+          {/* Credentials error */}
           {err && (
             <div className="error" role="alert" style={{ paddingTop: 4 }}>
               {err}
